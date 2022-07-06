@@ -10,16 +10,18 @@ const Header = () => {
       <form className="header-buttons">
         <>
           {/* might need to change capitalization*/}
-          <NavLink to="/posts" activeClassName="current">
+          <NavLink to="/posts" activeClassName="current" className={"routebuttons"}>
             POSTS
           </NavLink>
-          <NavLink to="/profile" activeClassName="current">
+          <NavLink to="/profile" activeClassName="current" className={"routebuttons"}>
             PROFILE
           </NavLink>
-          <NavLink to="/register" activeClassName="current">
+          <NavLink to="/register" activeClassName="current" className={"routebuttons"}>
             REGISTER
           </NavLink>
-          <button onClick={"handleUserLogin"}>LOGIN</button>
+          <NavLink to="/Login" activeClassName="current" className={"routebuttons"}>
+            LOGIN
+          </NavLink>
         </>
       </form>
     </header>
