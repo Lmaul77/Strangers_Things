@@ -10,26 +10,13 @@ const App = () => {
         <Header />
         <>
         <Routes>
-            <Route path="/posts">
-                <Posts />
-            </Route>
-            <Route path="/profile">
-                <Profile />
-            </Route>
-            <Route path="/register">
-                <Register />
-            </Route>
-            <Route path="/login">
-                <LoginLogout />
-            </Route>
-        </Routes>
-        </>
-        <>
-        <Routes>
-            <Route exact path="/">
+            <Route path="/posts" element={<Posts />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<LoginLogout />} />
+            {/* <Route exact path="/">
 
-            </Route>
-            <Navigate to="/"/>
+            </Route> */}
         </Routes>
         </>
         </div>
