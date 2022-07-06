@@ -1,7 +1,12 @@
 import React from 'react';
+import {Header} from './';
+
+import './App.css'
 
 const App = () => {
-    return(<h1>APP Component</h1>)
+    return(
+        <Header />
+    )
 }
 
 export default App
