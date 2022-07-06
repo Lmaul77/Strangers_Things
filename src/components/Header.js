@@ -19,7 +19,7 @@ const Header = () => {
           <NavLink to="/register" activeClassName="current" className={"routebuttons"}>
             REGISTER
           </NavLink>
-          <NavLink to="/Login" activeClassName="current" className={"routebuttons"}>
+          <NavLink to="/login" activeClassName="current" className={"routebuttons"}>
             LOGIN
           </NavLink>
         </>

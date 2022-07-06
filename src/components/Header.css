@@ -7,7 +7,7 @@ header {
     align-items: center;
 
     font-size: 16px;
-    background-color: lightblue;
+    background-color: #4059AD;
     padding: 1em;
 }
 
@@ -28,7 +28,6 @@ header .routebuttons {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    color: red;
     padding: 1em;
     font-size: 32px;
     text-decoration: none;
