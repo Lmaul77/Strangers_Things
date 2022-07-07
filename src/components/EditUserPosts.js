@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AddUserPosts = () => {
+const EditUserPosts = () => {
     function deliverCheck() {
         let check = document.createElement("input")
         check.setAttribute("type", "checkbox")
@@ -12,7 +12,7 @@ const AddUserPosts = () => {
         <div id="RegisterBox">
         <div>
             <h1>
-                Add New Post
+                Edit New Post
             </h1>
         </div>
         <form onSubmit ={"handleSubmit"}>
@@ -29,11 +29,11 @@ const AddUserPosts = () => {
             <input id="Location" placeholder="Location"></input>
         </div>
         <button onClick={deliverCheck()}></button>
-        <button type="Submit">CREATE</button>
+        <button type="Submit">SAVE</button>
         </form>
         </div>
         </div>
         </>)
 } 
 
-export default AddUserPosts
+export default EditUserPosts

@@ -1,0 +1,40 @@
+#ProfileHeader {
+    font-size: 48px
+}
+
+#gridcontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+#messagesToBox {
+    box-sizing: border-box;
+    background-color: #EFF2F1;
+    box-shadow: 0 2px 4px 0 #6B9AC4;
+    /* min-height: 400px;
+    padding: 35px 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 47.5%; */
+}
+
+#messagesFromBox {
+    box-sizing: border-box;
+    background-color: #EFF2F1;
+    box-shadow: 0 2px 4px 0 #6B9AC4;
+}
+
+#userPostsBox {
+    box-sizing: border-box;
+    background-color: #EFF2F1;
+    box-shadow: 0 2px 4px 0 #6B9AC4;
+    margin-top: 11px;
+}
+
+.gridBoxes {
+    padding: 15px;
+    overflow: scroll;
+}
