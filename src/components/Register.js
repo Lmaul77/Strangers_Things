@@ -1,6 +1,13 @@
 import React from 'react';
+import {RegisterPerson} from '../api/index.js'
 
 import './Register.css'
+
+async function handleSubmit (event){
+    event.preventDefault() 
+    console.log(event)
+    RegisterPerson(event)
+}
 
 const Register = () => {
     return  (<>
@@ -11,7 +18,7 @@ const Register = () => {
                 Create Your New Stranger's Things Account
             </h1>
         </div>
-        <form onSubmit ={"handleSubmit"}>
+        <form onSubmit ={handleSubmit}>
         <div>
             <input id="Username" placeholder="Username"></input>
         </div>
