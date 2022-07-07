@@ -46,9 +46,19 @@ export async function LoginPerson(event) {
 }
 
 export async function GetPosts() {
-  const response = await fetch(`${Base_URL}${cohortName}/posts`, {});
+  const response = await fetch(`${Base_URL}${cohortName}/posts`);
   const result = await response.json();
-  const userposts = result.data.posts[0]
+  const userposts = result
   console.log(result)
-  return userposts;
+  
+return userposts;
 }
+
+// export async function NewMessage(){
+//     const response = await fetch(`${Base_URL}${cohortName}/posts/tokenFromStorage/messages`, {
+//         method: "POST",
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//     });
+// }
