@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { GetPosts } from '../api/index.js'
 
 import './Posts.css'
 
@@ -20,7 +21,7 @@ return (
         </h1>
         </span>
         <div>
-            {/* this is where posts will go! */}
+            {/* <GetPosts /> */}
         </div>
     </div>
 )

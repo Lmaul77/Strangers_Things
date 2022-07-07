@@ -1,7 +1,14 @@
 import React from 'react';
 import {Header} from './';
+import {LoginPerson} from '../api/index.js'
 
 import './LoginLogout.css'
+
+async function handleSubmit (event){
+    event.preventDefault() 
+    console.log(event)
+    LoginPerson(event)
+}
 
 const LoginLogut = () => {
     return  (<>
@@ -12,7 +19,7 @@ const LoginLogut = () => {
                 Log In To Your Stranger's Things Account
             </h1>
         </div>
-        <form onSubmit ={"handleSubmit"}>
+        <form onSubmit ={handleSubmit}>
         <div>
             <input id="Username" placeholder="Username"></input>
         </div>
