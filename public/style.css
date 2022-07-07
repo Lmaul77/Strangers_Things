@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 16px;
+    background-color: #4059AD;
+    padding: 1em;
+    text-decoration: none;
+    
+}
+
+.homeTitle {
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+}
+
+header h1 {
+    font-size: 2.4em;
+    color: #97D8C4;
+    text-shadow: 1px 1px 3px black;
+    margin-left: 30px;
+    text-decoration: none;
+    
+}
+
+header .header-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+header .routebuttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1em;
+    font-size: 32px;
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+}
+
+#welcomemessage {
+    font-size: 60px;
+
+}
+
+
+#LoginBoxCenter {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    }
+    
+    #LoginBox {
+      box-sizing: border-box;
+      background-color: #EFF2F1;
+      box-shadow: 0 2px 4px 0 #6B9AC4;
+      width: 360px;
+      min-height: 400px;
+      padding: 35px 10px;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    
+    h1{
+        font-size: 1.2em;
+        color: #4059AD;
+        text-shadow: 1px 1px 3px darkgray; 
+        text-align: center;
+    }
+    
+    #Username {
+        align-self: center;
+        padding: 15px;
+        margin: 5px;
+        font-size: 20px;
+        border-color: #4059AD;
+    }
+    
+    #Password {
+        align-self: center;
+        padding: 15px;
+        margin: 5px;
+        font-size: 20px;
+        border-color: #4059AD;
+    }
+    
+    /* this button css was taken from webdeasy Author: Natalia Reshetnikova; */
+    
+    button {
+        color: white;
+        transition: all 0.3s;
+        position: relative;
+        height: 40px;
+        width: 200px;
+        text-align: center;
+        margin-top: 50px;
+        background-color: #4059AD;
+        border: none;
+        left: 18px;
+      }
+      button span {
+        transition: all 0.3s;
+      }
+      button::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+        transition: all 0.3s;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        border-top-style: solid;
+        border-bottom-style: solid;
+        border-top-color: rgba(255,255,255,0.5);
+        border-bottom-color: rgba(255,255,255,0.5);
+        transform: scale(0.1, 1);
+      }
+      button:hover span {
+        letter-spacing: 2px;
+      }
+      button:hover::before {
+        opacity: 1; 
+        transform: scale(1, 1); 
+      }
+      button::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.3s;
+        background-color: rgba(255,255,255,0.1);
+      }
+      button:hover::after {
+        opacity: 0; 
+        transform: scale(0.1, 1);
+      }
+
+      h1 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #searchBar {
+        margin: 20px;
+        border: none;
+        border-bottom: 1px solid black;
+    }
+    
+    #postsheader {
+        font-size: 60px;
+    }
+    
+    .addButton {
+        text-decoration: none;
+        font-size: 20px;
+        color: #4059AD;
+    }
+    
+    .posts {
+        display: block;
+        border: 2px solid black;
+        margin: 5px;
+        background-color: #97D8C4;
+    }
+    
+    #Title {
+            font-size: 30px;
+            border-bottom: 1px solid black;
+            text-align: left;
+    }
+    
+    #Description {
+            font-size: 18px;
+    }
+
+    #ProfileHeader {
+        font-size: 48px
+    }
+    
+    #gridcontainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+    
+    #messagesToBox {
+        box-sizing: border-box;
+        background-color: #EFF2F1;
+        box-shadow: 0 2px 4px 0 #6B9AC4;
+       
+    }
+    
+    #messagesFromBox {
+        box-sizing: border-box;
+        background-color: #EFF2F1;
+        box-shadow: 0 2px 4px 0 #6B9AC4;
+    }
+    
+    #userPostsBox {
+        box-sizing: border-box;
+        background-color: #EFF2F1;
+        box-shadow: 0 2px 4px 0 #6B9AC4;
+        margin-top: 11px;
+    }
+    
+    .gridBoxes {
+        padding: 15px;
+        overflow: scroll;
+    }
+    #RegisterBoxCenter {
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        }
+        
+        #RegisterBox {
+          box-sizing: border-box;
+          background-color: #EFF2F1;
+          box-shadow: 0 2px 4px 0 #6B9AC4;
+          width: 360px;
+          min-height: 400px;
+          padding: 35px 10px;
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+        }
+        
+        h1{
+            font-size: 1.2em;
+            color: #4059AD;
+            text-shadow: 1px 1px 3px darkgray; 
+            text-align: center;
+        }
+        
+        #Username {
+            align-self: center;
+            padding: 15px;
+            margin: 5px;
+            font-size: 20px;
+            border-color: #4059AD;
+        }
+        
+        #Password {
+            align-self: center;
+            padding: 15px;
+            margin: 5px;
+            font-size: 20px;
+            border-color: #4059AD;
+        }
+        
+        this button css was taken from webdeasy Author: Natalia Reshetnikova;
+        
+        button {
+            color: white;
+            transition: all 0.3s;
+            position: relative;
+            height: 40px;
+            width: 200px;
+            text-align: center;
+            align-self: center;
+            margin-left: 27px;
+            margin-top: 50px;
+            background-color: #4059AD;
+            border: none;
+            left: 18px;
+          }
+          button span {
+            transition: all 0.3s;
+          }
+          button::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+            transition: all 0.3s;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            border-top-style: solid;
+            border-bottom-style: solid;
+            border-top-color: rgba(255,255,255,0.5);
+            border-bottom-color: rgba(255,255,255,0.5);
+            transform: scale(0.1, 1);
+          }
+          button:hover span {
+            letter-spacing: 2px;
+          }
+          button:hover::before {
+            opacity: 1; 
+            transform: scale(1, 1); 
+          }
+          button::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            transition: all 0.3s;
+            background-color: rgba(255,255,255,0.1);
+          }
+          button:hover::after {
+            opacity: 0; 
+            transform: scale(0.1, 1);
+          }

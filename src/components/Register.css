@@ -1,4 +1,4 @@
-#RegisterBoxCenter {
+/* #RegisterBoxCenter {
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -42,7 +42,7 @@
         border-color: #4059AD;
     }
     
-    /* this button css was taken from webdeasy Author: Natalia Reshetnikova; */
+    this button css was taken from webdeasy Author: Natalia Reshetnikova;
     
     button {
         color: white;
@@ -100,4 +100,4 @@
       button:hover::after {
         opacity: 0; 
         transform: scale(0.1, 1);
-      }
+      } */

@@ -1,4 +1,4 @@
-#ProfileHeader {
+/* #ProfileHeader {
     font-size: 48px
 }
 
@@ -12,13 +12,7 @@
     box-sizing: border-box;
     background-color: #EFF2F1;
     box-shadow: 0 2px 4px 0 #6B9AC4;
-    /* min-height: 400px;
-    padding: 35px 10px;
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 47.5%; */
+   
 }
 
 #messagesFromBox {
@@ -37,4 +31,4 @@
 .gridBoxes {
     padding: 15px;
     overflow: scroll;
-}
+} */
