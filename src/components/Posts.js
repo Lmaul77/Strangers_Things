@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import { GetPosts } from '../api/index.js'
 
-import './Posts.css'
+// import './Posts.css'
 
 const Posts = () => {
     const [posts, setPosts] = useState([]);
