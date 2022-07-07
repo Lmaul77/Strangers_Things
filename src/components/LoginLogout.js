@@ -7,7 +7,8 @@ import './LoginLogout.css'
 async function handleSubmit (event){
     event.preventDefault() 
     console.log(event)
-    LoginPerson(event)
+    const token = await LoginPerson(event)
+    localStorage.setItem("token", token)
 }
 
 const LoginLogut = () => {

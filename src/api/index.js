@@ -19,9 +19,7 @@ export async function RegisterPerson(event) {
   });
 
   const result = await response.json();
-  const token = result.data.token;
-  localStorage.setItem("token", token);
-  const tokenFromStorage = localStorage.getItem("token");
+  return result
 }
 
 export async function LoginPerson(event) {
@@ -42,23 +40,30 @@ export async function LoginPerson(event) {
   });
 
   const result = await response.json();
-  return result
+  const token = result.data.token;
+  console.log(token)
+  return token
 }
 
 export async function GetPosts() {
   const response = await fetch(`${Base_URL}${cohortName}/posts`);
   const result = await response.json();
   const userposts = result
-  console.log(result)
+  // console.log(result)
   
 return userposts;
 }
 
-// export async function NewMessage(){
-//     const response = await fetch(`${Base_URL}${cohortName}/posts/tokenFromStorage/messages`, {
-//         method: "POST",
-//         headers: {
-//             'Content-Type': 'application/json'
-//         }
-//     });
-// }
+export async function getProfile(token){
+  console.log(`${Base_URL}${cohortName}/users/me`)
+    const response = await fetch(`${Base_URL}${cohortName}/users/me`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+    });
+    const result = await response.json()
+    console.log(result)
+    // return result
+}
+

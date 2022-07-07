@@ -1,8 +1,23 @@
-import React from 'react';
-
+import React, {useState, useEffect} from 'react';
+import { getProfile, GetProfile } from '../api';
 import './Profile.css'
 
+
+
 const Profile = () => {
+    let token = ""
+    const [myInfo, setMyInfo] = useState({})
+    useEffect(() => {
+        token = localStorage.getItem("token")
+        console.log(token, "my token")
+        async function getMyInfo() {
+            const myReturnedInfo = await getProfile(token)
+            console.log(myReturnedInfo)
+            setMyInfo(myReturnedInfo)
+        }
+        getMyInfo()
+    }, [])
+
     return (
         <div>
             <h1 id="ProfileHeader">WELCOME USERNAME</h1> 

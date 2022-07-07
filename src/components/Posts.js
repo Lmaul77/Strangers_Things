@@ -10,17 +10,15 @@ const Posts = () => {
         GetPosts().then((results)=>{
             setPosts(results.data.posts);
         }
-
         )
     },[])
     const MapPosts = posts.map((element)=>{
-        return(<option key={ element.id } value={ element.id }>
-            { element.title }
-            { element.description }
-            { element.price }
-            { element.location }
-          </option>
-            
+        return(<div key={ element.id } className="posts">
+            <h1 id="Title">{ element.title }</h1>
+            <p id="Description">{ element.description }</p>
+            <div id="Price">Price: { element.price }</div>
+            <div id="Location">Location: { element.location }</div>
+          </div>
             )
     })
 return (

@@ -20,3 +20,20 @@ h1 {
     font-size: 20px;
     color: #4059AD;
 }
+
+.posts {
+    display: block;
+    border: 2px solid black;
+    margin: 5px;
+    background-color: #97D8C4;
+}
+
+#Title {
+        font-size: 30px;
+        border-bottom: 1px solid black;
+        text-align: left;
+}
+
+#Description {
+        font-size: 18px;
+}
