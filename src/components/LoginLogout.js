@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Header} from './';
 import {LoginPerson} from '../api/index.js'
 
 import './LoginLogout.css'
 
-async function handleSubmit (event){
-    event.preventDefault() 
-    console.log(event)
-    const token = await LoginPerson(event)
-    localStorage.setItem("token", token)
-}
+const LoginLogut = ({loggedIn, setLoggedIn}) => {
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
 
-const LoginLogut = () => {
+    const handleOnChange = (event) => {
+        const input = event.target.id
+        if (input === "username") {
+            setUsername(event.target.value)
+        } else {
+            setPassword(event.target.value)
+        }
+    }
+
+    async function handleSubmit (event){
+        event.preventDefault() 
+        console.log(event)
+        const token = await LoginPerson(event)
+        token ? setLoggedIn(true) : false
+        localStorage.setItem("token", token)
+    }
+    
     return  (<>
         <div id="LoginBoxCenter">
         <div id="LoginBox">

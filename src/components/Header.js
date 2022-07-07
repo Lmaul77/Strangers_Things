@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header>
       <h1>
-        <NavLink to="/home">Stranger's Things </NavLink></h1>
+        <NavLink to="/" className={"homeheader"}>Stranger's Things </NavLink></h1>
       <form className="header-buttons">
         <>
           {/* might need to change capitalization*/}
