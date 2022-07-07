@@ -16,7 +16,7 @@ return (
             <input type="text" name="search-term" placeholder="Search Posts" id="searchBar"></input>
         </form>
         <div id="linktoadd">
-        <NavLink to="/adduserpost">(ADD POST)</NavLink>
+        <NavLink to="/adduserposts">(ADD POST)</NavLink>
         </div>
         </h1>
         </span>
