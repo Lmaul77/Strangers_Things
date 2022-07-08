@@ -9,6 +9,7 @@ const EditUserPosts = ({
   priceInput,
   setPriceInput,
   checkbox,
+  setCheckbox,
   postId
 }) => {
   function handleSubmit(event) {
@@ -26,7 +27,7 @@ const EditUserPosts = ({
 
   function handleChange(event) {
     event.preventDefault();
-    setCheckbox(checkbox === "checked" ? "unchecked" : "checked");
+    setCheckbox((checkbox === "checked")   ? "unchecked" : "checked");
   }
 
   return (

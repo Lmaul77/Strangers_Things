@@ -6,7 +6,7 @@ import EditUserPosts from './EditUserPosts.js';
 
 // import './Posts.css'
 
-const Posts = ({titleInput, descriptionInput, priceInput, willDeliver, locationInput, setTitleInput, setDescriptionInput, setPriceInput, setLocationInput}) => {
+const Posts = ({checkbox, setCheckbox, titleInput, descriptionInput, priceInput, willDeliver, locationInput, setTitleInput, setDescriptionInput, setPriceInput, setLocationInput}) => {
 
     const navigate = useNavigate()    
 
@@ -33,7 +33,7 @@ const Posts = ({titleInput, descriptionInput, priceInput, willDeliver, locationI
             <div id="Author">Author: { element.author.username }</div>
             <div id="Location">Location: { element.location }</div>
             <div id="WillDeliver">Willing to Deliver? { element.willDeliver ? "Yes" : "No" }</div>
-            <EditUserPosts postId={postId} titleInput={titleInput} setTitleInput={setTitleInput} descriptionInput={descriptionInput} setDescriptionInput={setDescriptionInput} priceInput={priceInput} setPriceInput={setPriceInput} locationInput={locationInput} setLocationInput={setLocationInput}/>
+            <EditUserPosts postId={postId} checkbox={checkbox} setCheckbox={setCheckbox} titleInput={titleInput} setTitleInput={setTitleInput} descriptionInput={descriptionInput} setDescriptionInput={setDescriptionInput} priceInput={priceInput} setPriceInput={setPriceInput} locationInput={locationInput} setLocationInput={setLocationInput}/>
             <NavLink to="/edituserposts">Edit</NavLink>
           </div>
             )
