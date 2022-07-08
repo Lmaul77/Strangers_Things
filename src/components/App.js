@@ -10,6 +10,7 @@ import {
   Home,
   Logout,
   EditUserPosts,
+  UserPosts
 } from "./";
 
 import "./App.css";
@@ -23,6 +24,7 @@ const App = () => {
   const [locationInput, setLocationInput] = useState("");
   const [checkbox, setCheckbox] = useState(false);
   const [allPosts, setAllPosts] = useState([])
+  const [myInfo, setMyInfo] = useState([])
 
   return (
     <div>
@@ -93,7 +95,8 @@ const App = () => {
                   />
                 }
               />
-              <Route path="/profile" element={<Profile />} />
+              <Route path="/profile" element={<Profile myInfo={myInfo} setMyInfo={setMyInfo} loggedIn={loggedIn}/>} />
+              {/* <Route path="/userposts" element={<UserPosts myInfo={myInfo} setMyInfo={setMyInfo} loggedIn={loggedIn}/>}/> */}
               <Route
                 path="/logout"
                 element={<Logout setLoggedIn={setLoggedIn} />}
