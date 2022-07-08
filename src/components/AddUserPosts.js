@@ -1,4 +1,5 @@
 import React from 'react';
+import { addPost } from '../api';
 
 const AddUserPosts = () => {
     function deliverCheck() {
@@ -6,6 +7,8 @@ const AddUserPosts = () => {
         check.setAttribute("type", "checkbox")
         document.body.appendChild(check)
     }
+
+    addPost(localStorage.getItem("token"))
 
     return  (<>
         <div id="RegisterBoxCenter">

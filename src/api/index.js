@@ -67,3 +67,23 @@ export async function getProfile(token){
     return result
 }
 
+export async function addPost(token) {
+  const response = await fetch(`${Base_URL}${cohortName}/posts`, {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify({
+      post: {
+        title: "blah",
+        description: "blah",
+        price: "blah",
+        willDeliver: true
+      }
+    })
+  })
+  const result = await response.json()
+  console.log(result)
+}
+
