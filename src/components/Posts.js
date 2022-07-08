@@ -18,7 +18,7 @@ const Posts = ({
   setPriceInput,
   setLocationInput,
   allPosts,
-  setAllPosts
+  setAllPosts,
 }) => {
   function handleEdit() {
     const token = localStorage.getItem("token");
@@ -31,46 +31,48 @@ const Posts = ({
       postId
     );
   }
-
-  
+  let MapPosts = [];
+  //   const [posts, setPosts] = useState([]);
   useEffect(() => {
     GetPosts().then((results) => {
-      console.log(results);
+      //   console.log(results);
       setAllPosts(results.data.posts);
     });
   }, []);
-  const MapPosts = allPosts.map((element) => {
-    const postId = element._id;
-    console.log(element);
-    return (
-      <div key={element.id} className="posts">
-        <h1 id="Title">{element.title}</h1>
-        <p id="Description">{element.description}</p>
-        <div id="Price">Price: {element.price}</div>
-        <div id="Author">Author: {element.author.username}</div>
-        <div id="Location">Location: {element.location}</div>
-        <div id="WillDeliver">
-          Willing to Deliver? {element.willDeliver ? "Yes" : "No"}
+  if (allPosts && allPosts.length) {
+    MapPosts = allPosts.map((element) => {
+      // console.log(element)
+      const postId = element._id;
+      return (
+        <div key={element._id} className="posts">
+          <h1 id="Title">{element.title}</h1>
+          <p id="Description">{element.description}</p>
+          <div id="Price">Price: {element.price}</div>
+          <div id="Author">Author: {element.author.username}</div>
+          <div id="Location">Location: {element.location}</div>
+          <div id="WillDeliver">
+            Willing to Deliver? {element.willDeliver ? "Yes" : "No"}
+          </div>
+          <EditUserPosts
+            postId={postId}
+            checkbox={checkbox}
+            setCheckbox={setCheckbox}
+            titleInput={titleInput}
+            setTitleInput={setTitleInput}
+            descriptionInput={descriptionInput}
+            setDescriptionInput={setDescriptionInput}
+            priceInput={priceInput}
+            setPriceInput={setPriceInput}
+            locationInput={locationInput}
+            setLocationInput={setLocationInput}
+          />
+          <NavLink to="/edituserposts" onClick={handleEdit}>
+            Edit
+          </NavLink>
         </div>
-        <EditUserPosts
-          postId={postId}
-          checkbox={checkbox}
-          setCheckbox={setCheckbox}
-          titleInput={titleInput}
-          setTitleInput={setTitleInput}
-          descriptionInput={descriptionInput}
-          setDescriptionInput={setDescriptionInput}
-          priceInput={priceInput}
-          setPriceInput={setPriceInput}
-          locationInput={locationInput}
-          setLocationInput={setLocationInput}
-        />
-        <NavLink to="/edituserposts" onClick={handleEdit}>
-          Edit
-        </NavLink>
-      </div>
-    );
-  });
+      );
+    });
+  }
   return (
     <div>
       <span>
@@ -91,7 +93,7 @@ const Posts = ({
           </div>
         </h1>
       </span>
-      <div>{MapPosts}</div>
+      {MapPosts && MapPosts.length ? <div>{MapPosts}</div> : null}
     </div>
   );
 };

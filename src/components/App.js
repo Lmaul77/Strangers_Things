@@ -35,6 +35,8 @@ const App = () => {
                 path="/posts"
                 element={
                   <Posts
+                    checkbox={checkbox}
+                    setCheckbox={setCheckbox}
                     titleInput={titleInput}
                     setTitleInput={setTitleInput}
                     descriptionInput={descriptionInput}
@@ -115,6 +117,8 @@ const App = () => {
                     setAuthorInput={setAuthorInput}
                     locationInput={locationInput}
                     setLocationInput={setLocationInput}
+                    allPosts={allPosts}
+                    setAllPosts={setAllPosts}
                   />
                 }
               />

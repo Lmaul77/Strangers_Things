@@ -30,7 +30,8 @@ const Navigate = useNavigate()
       priceInput,
       checkbox === "checked"
     );
-    //setAllPosts([...allPosts, freshPost])
+    console.log(freshPost)
+    setAllPosts([freshPost, ...allPosts])
     Navigate("/posts")
 
   }

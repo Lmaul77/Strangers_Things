@@ -68,6 +68,7 @@ export async function getProfile(token){
 }
 
 export async function addPost(token, titleInput, descriptionInput, priceInput, willDeliver) {
+  console.log(token, titleInput, descriptionInput, priceInput, willDeliver)
   const response = await fetch(`${Base_URL}${cohortName}/posts`, {
     method: "POST",
     headers: {
@@ -85,6 +86,7 @@ export async function addPost(token, titleInput, descriptionInput, priceInput, w
   })
   const result = await response.json()
   console.log(result, "add post fired")
+  return result.data.post
 }
 
 export async function editPost(token, titleInput, descriptionInput, priceInput, willDeliver, postId) {
