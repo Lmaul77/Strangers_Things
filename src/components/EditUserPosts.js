@@ -1,39 +1,91 @@
-import React from 'react';
+import React from "react";
+import { editPost } from "../api";
 
-const EditUserPosts = () => {
-    function deliverCheck() {
-        let check = document.createElement("input")
-        check.setAttribute("type", "checkbox")
-        document.body.appendChild(check)
-    }
+const EditUserPosts = ({
+  titleInput,
+  setTitleInput,
+  descriptionInput,
+  setDescriptionInput,
+  priceInput,
+  setPriceInput,
+  checkbox,
+  postId
+}) => {
+  function handleSubmit(event) {
+    event.preventDefault();
+    const token = localStorage.getItem("token");
+    editPost(
+      token,
+      titleInput,
+      descriptionInput,
+      priceInput,
+      checkbox === "checked",
+      postId
+    );
+  }
 
-    return  (<>
-        <div id="RegisterBoxCenter">
+  function handleChange(event) {
+    event.preventDefault();
+    setCheckbox(checkbox === "checked" ? "unchecked" : "checked");
+  }
+
+  return (
+    <>
+      <div id="RegisterBoxCenter">
         <div id="RegisterBox">
-        <div>
-            <h1>
-                Edit New Post
-            </h1>
+          <div>
+            <h1>Edit New Post</h1>
+          </div>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <input
+                id="Title"
+                placeholder="Title"
+                value={titleInput}
+                onChange={(event) => {
+                  setTitleInput(event.target.value);
+                }}
+              />
+            </div>
+            <div>
+              <input
+                id="Description"
+                placeholder="Description"
+                value={descriptionInput}
+                onChange={(event) => {
+                  setDescriptionInput(event.target.value);
+                }}
+              />
+            </div>
+            <div>
+              <input
+                id="Price"
+                placeholder="Price"
+                value={priceInput}
+                onChange={(event) => {
+                  setPriceInput(event.target.value);
+                }}
+              />
+            </div>
+            <div>
+              <label htmlFor="willDeliver">
+                <input
+                  id="willDeliver"
+                  type="checkbox"
+                  name="willDeliver"
+                  onChange={handleChange}
+                />
+                Willing to Deliver?
+              </label>
+            </div>
+            <button type="Submit">
+              SAVE
+            </button>
+          </form>
         </div>
-        <form onSubmit ={"handleSubmit"}>
-        <div>
-            <input id="Title" placeholder="Title"></input>
-        </div>
-        <div>
-            <input id="Description" placeholder="Description"></input>
-        </div>
-        <div>
-            <input id="Price" placeholder="Price"></input>
-        </div>
-        <div>
-            <input id="Location" placeholder="Location"></input>
-        </div>
-        <button onClick={deliverCheck()}></button>
-        <button type="Submit">SAVE</button>
-        </form>
-        </div>
-        </div>
-        </>)
-} 
+      </div>
+    </>
+  );
+};
 
-export default EditUserPosts
+export default EditUserPosts;

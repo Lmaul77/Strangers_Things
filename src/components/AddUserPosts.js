@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useTransition} from "react";
+import React from "react";
 import { addPost } from "../api";
 
 const AddUserPosts = ({
@@ -8,19 +8,26 @@ const AddUserPosts = ({
   setDescriptionInput,
   priceInput,
   setPriceInput,
+  checkbox,
+  setCheckbox,
 }) => {
-    const [checkbox, setCheckbox] = useState("unchecked")
 
-        function handleSubmit(event) {
-            event.preventDefault()
-            const token = localStorage.getItem("token")
-            addPost(token, titleInput, descriptionInput, priceInput, checkbox === "checked")
-        }
+  function handleSubmit(event) {
+    event.preventDefault();
+    const token = localStorage.getItem("token");
+    addPost(
+      token,
+      titleInput,
+      descriptionInput,
+      priceInput,
+      checkbox === "checked"
+    );
+  }
 
-        function handleChange(event) {
-            event.preventDefault()
-            setCheckbox((checkbox === "checked") ? "unchecked" : "checked")
-        }
+  function handleChange(event) {
+    event.preventDefault();
+    setCheckbox(checkbox === "checked" ? "unchecked" : "checked");
+  }
 
   return (
     <>
@@ -62,7 +69,12 @@ const AddUserPosts = ({
             </div>
             <div>
               <label htmlFor="willDeliver">
-              <input id="willDeliver" type="checkbox" name="willDeliver" onChange={handleChange}/>
+                <input
+                  id="willDeliver"
+                  type="checkbox"
+                  name="willDeliver"
+                  onChange={handleChange}
+                />
                 Willing to Deliver?
               </label>
             </div>

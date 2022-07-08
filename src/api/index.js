@@ -87,3 +87,28 @@ export async function addPost(token, titleInput, descriptionInput, priceInput, w
   console.log(result)
 }
 
+export async function editPost(token, titleInput, descriptionInput, priceInput, willDeliver, postId) {
+  const response = await fetch(`${Base_URL}${cohortName}/posts/${postId}`, {
+    method: "PATCH",
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`
+  },
+  body: JSON.stringify({
+    post: {
+      title: titleInput,
+      description: descriptionInput,
+      price: priceInput,
+      location: "On Request",
+      willDeliver: willDeliver
+    }
+  })
+  })
+  const result = await response.json()
+  console.log(result.data._id)
+  return result
+}
+
+// export async function deletePost(token) {
+//   const response = await fetch(`${Base_URL}${cohortName}/posts/${token}`)
+// }
