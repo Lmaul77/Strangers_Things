@@ -6,6 +6,11 @@ import './App.css'
 
 const App = () => {
     const [loggedIn, setLoggedIn] = useState(false)
+    const [titleInput, setTitleInput] =useState("")
+    const [descriptionInput, setDescriptionInput] = useState("")
+    const [priceInput, setPriceInput] = useState("")
+    const [authorInput, setAuthorInput] = useState("")
+    const [locationInput, setLocationInput] = useState("")
 
     return(
         <div> 
@@ -16,7 +21,7 @@ const App = () => {
             <>
             <Route path="/posts" element={<Posts />} />
             <Route path="/" element={<Home/>}/>
-            <Route path="/adduserposts" element={<AddUserPosts />} />
+            <Route path="/adduserposts" element={<AddUserPosts titleInput={titleInput} setTitleInput={setTitleInput} descriptionInput={descriptionInput} setDescriptionInput={setDescriptionInput} priceInput={priceInput} setPriceInput={setPriceInput} authorInput={authorInput} setAuthorInput={setAuthorInput} locationInput={locationInput} setLocationInput={setLocationInput}/>} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/logout" element={<Logout setLoggedIn={setLoggedIn}/>} />
             </>

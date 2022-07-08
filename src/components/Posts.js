@@ -8,6 +8,7 @@ const Posts = () => {
     const [posts, setPosts] = useState([]);
     useEffect(()=>{
         GetPosts().then((results)=>{
+            console.log(results)
             setPosts(results.data.posts);
         }
         )
@@ -17,7 +18,9 @@ const Posts = () => {
             <h1 id="Title">{ element.title }</h1>
             <p id="Description">{ element.description }</p>
             <div id="Price">Price: { element.price }</div>
+            <div id="Author">Author: { element.author.username }</div>
             <div id="Location">Location: { element.location }</div>
+            <div id="WillDeliver">Willing to Deliver? { element.willDeliver ? "Yes" : "No" }</div>
           </div>
             )
     })

@@ -67,7 +67,7 @@ export async function getProfile(token){
     return result
 }
 
-export async function addPost(token) {
+export async function addPost(token, titleInput, descriptionInput, priceInput, willDeliver) {
   const response = await fetch(`${Base_URL}${cohortName}/posts`, {
     method: "POST",
     headers: {
@@ -76,10 +76,10 @@ export async function addPost(token) {
     },
     body: JSON.stringify({
       post: {
-        title: "blah",
-        description: "blah",
-        price: "blah",
-        willDeliver: true
+        title: titleInput,
+        description: descriptionInput,
+        price: priceInput,
+        willDeliver: willDeliver
       }
     })
   })

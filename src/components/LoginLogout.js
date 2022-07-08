@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import {Header} from './';
 import {LoginPerson} from '../api/index.js'
+import {
+    useNavigate,
+  } from "react-router-dom";
 
 import './LoginLogout.css'
 
 const LoginLogut = ({loggedIn, setLoggedIn}) => {
+    const navigate = useNavigate()
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
@@ -23,6 +27,7 @@ const LoginLogut = ({loggedIn, setLoggedIn}) => {
         const token = await LoginPerson(event)
         token ? setLoggedIn(true) : false
         localStorage.setItem("token", token)
+        navigate('/profile')
     }
     
     return  (<>

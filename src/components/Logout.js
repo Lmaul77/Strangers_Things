@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import {
+    useNavigate,
+  } from "react-router-dom";
 
 
 const Logout = ({setLoggedIn}) =>{
-    setLoggedIn(false)
-    localStorage.removeItem('token');
+    const navigate = useNavigate()
+    useEffect(() => { 
+        setLoggedIn(false)
+        navigate('/')
+    })
+    // setLoggedIn(false)
+    // localStorage.removeItem('token');
     return(
     <div>
         <h1 id="logoutmessage">You Are Logged Out!</h1>
