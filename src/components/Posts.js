@@ -1,48 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { editPost, GetPosts } from "../api/index.js";
-import EditUserPosts from "./EditUserPosts.js";
 
 // import './Posts.css'
 
 const Posts = ({
-  checkbox,
-  setCheckbox,
-  titleInput,
-  descriptionInput,
-  priceInput,
-  willDeliver,
-  locationInput,
-  setTitleInput,
-  setDescriptionInput,
-  setPriceInput,
-  setLocationInput,
   allPosts,
   setAllPosts,
 }) => {
-  function handleEdit() {
-    const token = localStorage.getItem("token");
-    editPost(
-      token,
-      titleInput,
-      descriptionInput,
-      priceInput,
-      willDeliver,
-      postId
-    );
-  }
   let MapPosts = [];
-  //   const [posts, setPosts] = useState([]);
   useEffect(() => {
     GetPosts().then((results) => {
-      //   console.log(results);
       setAllPosts(results.data.posts);
     });
   }, []);
   if (allPosts && allPosts.length) {
     MapPosts = allPosts.map((element) => {
-      // console.log(element)
-      const postId = element._id;
       return (
         <div key={element._id} className="posts">
           <h1 id="Title">{element.title}</h1>
@@ -53,22 +26,6 @@ const Posts = ({
           <div id="WillDeliver">
             Willing to Deliver? {element.willDeliver ? "Yes" : "No"}
           </div>
-          <EditUserPosts
-            postId={postId}
-            checkbox={checkbox}
-            setCheckbox={setCheckbox}
-            titleInput={titleInput}
-            setTitleInput={setTitleInput}
-            descriptionInput={descriptionInput}
-            setDescriptionInput={setDescriptionInput}
-            priceInput={priceInput}
-            setPriceInput={setPriceInput}
-            locationInput={locationInput}
-            setLocationInput={setLocationInput}
-          />
-          <NavLink to="/edituserposts" onClick={handleEdit}>
-            Edit
-          </NavLink>
         </div>
       );
     });

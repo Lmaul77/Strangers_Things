@@ -10,19 +10,13 @@ const EditUserPosts = ({
   setPriceInput,
   checkbox,
   setCheckbox,
-  postId
+  _id,
 }) => {
+
   function handleSubmit(event) {
     event.preventDefault();
     const token = localStorage.getItem("token");
-    editPost(
-      token,
-      titleInput,
-      descriptionInput,
-      priceInput,
-      checkbox,
-      postId
-    );
+  editPost(token, titleInput, descriptionInput, _id);
   }
 
   function handleChange(event) {
@@ -71,7 +65,8 @@ const EditUserPosts = ({
             <div>
               <label htmlFor="willDeliver">
                 <input
-                  id="willDeliver" checked={checkbox}
+                  id="willDeliver"
+                  checked={checkbox}
                   type="checkbox"
                   name="willDeliver"
                   onChange={handleChange}
@@ -79,9 +74,7 @@ const EditUserPosts = ({
                 Willing to Deliver?
               </label>
             </div>
-            <button type="Submit">
-              SAVE
-            </button>
+            <button type="Submit">SAVE</button>
           </form>
         </div>
       </div>

@@ -10,7 +10,7 @@ import {
   Home,
   Logout,
   EditUserPosts,
-  UserPosts
+  UserPosts,
 } from "./";
 
 import "./App.css";
@@ -76,7 +76,7 @@ const App = () => {
                   />
                 }
               />
-              <Route
+              {/* <Route
                 path="/edituserposts"
                 element={
                   <EditUserPosts
@@ -94,8 +94,8 @@ const App = () => {
                     setLocationInput={setLocationInput}
                   />
                 }
-              />
-              <Route path="/profile" element={<Profile myInfo={myInfo} setMyInfo={setMyInfo} loggedIn={loggedIn}/>} />
+              /> */}
+              <Route path="/profile/*" element={<Profile titleInput={titleInput} descriptionInput={descriptionInput} priceInput={priceInput} locationInput={locationInput} myInfo={myInfo} setMyInfo={setMyInfo} loggedIn={loggedIn} allPosts={allPosts} setAllPosts={setAllPosts} setTitleInput={setTitleInput} setDescriptionInput={setDescriptionInput} setPriceInput={setPriceInput} setLocationInput={setLocationInput}/>} />
               {/* <Route path="/userposts" element={<UserPosts myInfo={myInfo} setMyInfo={setMyInfo} loggedIn={loggedIn}/>}/> */}
               <Route
                 path="/logout"

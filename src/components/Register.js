@@ -5,7 +5,6 @@ import './Register.css'
 
 async function handleSubmit (event){
     event.preventDefault() 
-    console.log(event)
     RegisterPerson(event)
 }
 

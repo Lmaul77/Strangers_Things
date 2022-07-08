@@ -4,7 +4,6 @@ const Base_URL = "https://strangers-things.herokuapp.com/api/";
 export async function RegisterPerson(event) {
   const registerUsername = event.target[0].value;
   const registerPassword = event.target[1].value;
-  console.log(`${Base_URL}${cohortName}/users/register`);
   const response = await fetch(`${Base_URL}${cohortName}/users/register`, {
     method: "POST",
     headers: {
@@ -19,13 +18,12 @@ export async function RegisterPerson(event) {
   });
 
   const result = await response.json();
-  return result
+  return result;
 }
 
 export async function LoginPerson(event) {
   const loginUsername = event.target[0].value;
   const loginPassword = event.target[1].value;
-  console.log(`${Base_URL}${cohortName}/users/login`);
   const response = await fetch(`${Base_URL}${cohortName}/users/login`, {
     method: "POST",
     headers: {
@@ -41,78 +39,92 @@ export async function LoginPerson(event) {
 
   const result = await response.json();
   const token = result.data.token;
-  console.log(token)
-  return token
+  return token;
 }
 
 export async function GetPosts() {
   const response = await fetch(`${Base_URL}${cohortName}/posts`);
   const result = await response.json();
-  const userposts = result
-  // console.log(result)
-  
-return userposts;
+  const userposts = result;
+
+  return userposts;
 }
 
-export async function getProfile(token){
-  console.log(`${Base_URL}${cohortName}/users/me`)
-    const response = await fetch(`${Base_URL}${cohortName}/users/me`, {
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-        },
-    });
-    const result = await response.json()
-    console.log(result)
-    return result
+export async function getProfile(token) {
+  const response = await fetch(`${Base_URL}${cohortName}/users/me`, {
+    headers: {
+      "Content-Type": "application/json",
+      'Authorization': `Bearer ${token}`,
+    },
+  });
+  const result = await response.json();
+  return result;
 }
 
-export async function addPost(token, titleInput, descriptionInput, priceInput, willDeliver) {
-  console.log(token, titleInput, descriptionInput, priceInput, willDeliver)
+export async function addPost(
+  token,
+  titleInput,
+  descriptionInput,
+  priceInput,
+  willDeliver
+) {
   const response = await fetch(`${Base_URL}${cohortName}/posts`, {
     method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
+      "Content-Type": "application/json",
+      'Authorization': `Bearer ${token}`,
     },
     body: JSON.stringify({
       post: {
         title: titleInput,
         description: descriptionInput,
         price: priceInput,
-        willDeliver: willDeliver
-      }
-    })
-  })
-  const result = await response.json()
-  console.log(result, "add post fired")
-  return result.data.post
+        willDeliver: willDeliver,
+      },
+    }),
+  });
+  const result = await response.json();
+  return result.data.post;
 }
 
-export async function editPost(token, titleInput, descriptionInput, priceInput, willDeliver, postId) {
-  const response = await fetch(`${Base_URL}${cohortName}/posts/${postId}`, {
+export async function editPost(
+  token,
+  titleInput,
+  descriptionInput,
+  _id
+) {
+  console.log(_id, "this is my annoying edit id")
+  const response = await fetch(`${Base_URL}${cohortName}/posts/${_id}`, {
     method: "PATCH",
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${token}`
-  },
-  body: JSON.stringify({
-    post: {
-      title: titleInput,
-      description: descriptionInput,
-      price: priceInput,
-      location: "On Request",
-      willDeliver: willDeliver
-    }
-  })
-  })
-  const result = await response.json()
-  console.log(result.data._id)
-  return result
+    headers: {
+      "Content-Type": "application/json",
+      'Authorization': `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      post: {
+        title: titleInput,
+        description: descriptionInput,
+        price: 100,
+        location: "On Request",
+        willDeliver: willDeliver,
+      },
+    }),
+  });
+  // console.log(_id)
+  const result = await response.json();
+  console.log(result);
+  // return result;
 }
 
-
-
-// export async function deletePost(token) {
-//   const response = await fetch(`${Base_URL}${cohortName}/posts/${token}`)
-// }
+export async function deletePost(token, _id) {
+  console.log(_id, "this is my delete postid")
+  const response = await fetch(`${Base_URL}${cohortName}/posts/${_id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      'Authorization': `Bearer ${token}`,
+    },
+  });
+  const result = await response.json();
+  return result;
+}

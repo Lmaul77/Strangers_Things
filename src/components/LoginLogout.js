@@ -23,7 +23,6 @@ const LoginLogut = ({loggedIn, setLoggedIn}) => {
 
     async function handleSubmit (event){
         event.preventDefault() 
-        console.log(event)
         const token = await LoginPerson(event)
         token ? setLoggedIn(true) : false
         localStorage.setItem("token", token)

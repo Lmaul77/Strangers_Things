@@ -1,14 +1,28 @@
 import React, { useEffect } from "react";
-import { getProfile } from "../api";
+import { getProfile, deletePost } from "../api";
+import { useNavigate, NavLink } from "react-router-dom";
+import EditUserPosts from "./EditUserPosts.js";
+import DeleteUserPost from "./DeleteUserPost";
 
 import "./UserPosts.css";
 
-const UserPosts = ({ myInfo, setMyInfo, loggedIn }) => {
+const UserPosts = ({
+  titleInput,
+  descriptionInput,
+  priceInput,
+  locationInput,
+  setTitleInput,
+  setDescriptionInput,
+  setPriceInput,
+  setLocationInput,
+  myInfo,
+  setMyInfo,
+  loggedIn,
+}) => {
   useEffect(() => {
     if (loggedIn) {
       const token = localStorage.getItem("token");
       getProfile(token).then((results) => {
-        // console.log(results, "results from my profile");
         setMyInfo(results.data.posts);
       });
     } else {
@@ -19,23 +33,50 @@ const UserPosts = ({ myInfo, setMyInfo, loggedIn }) => {
   return (
     <div>
       {myInfo && myInfo.length
-        ? myInfo.map((info) => {
-            // console.log(info, "returning my info");
-            return (
-              <div key={info._id} className="posts">
-                <div>
-                  <h2> </h2>{" "}
-                </div>
-                <h1 id="Title">{info.title}</h1>
-                <p id="Description">{info.description}</p>
-                <div id="Price">Price: {info.price}</div>
-                <div id="Location">Location: {info.location}</div>
-                <div id="WillDeliver">
-                  Willing to Deliver? {info.willDeliver ? "Yes" : "No"}
-                </div>
-              </div>
-            ); 
-          })
+        ? myInfo.map(
+            ({
+              title,
+              description,
+              price,
+              location,
+              _id,
+              author,
+              willDeliver,
+            }) => {
+              return (
+                <>
+                  <div key={_id} className="posts">
+                    <div>
+                      <h2> </h2>{" "}
+                    </div>
+                    <h1 id="Title">{title}</h1>
+                    <p id="Description">{description}</p>
+                    <div id="Price">Price: {price}</div>
+                    {/* <div id="Author">Author: {author.username} </div> */}
+                    <div id="Location">Location: {location}</div>
+                    <div id="WillDeliver">
+                      Willing to Deliver? {willDeliver ? "Yes" : "No"}
+                    </div>
+                    <DeleteUserPost _id={_id} />
+                  </div>
+
+                  <>
+                    <EditUserPosts
+                      _id={_id}
+                      titleInput={titleInput}
+                      setTitleInput={setTitleInput}
+                      descriptionInput={descriptionInput}
+                      setDescriptionInput={setDescriptionInput}
+                      priceInput={priceInput}
+                      setPriceInput={setPriceInput}
+                      locationInput={locationInput}
+                      setLocationInput={setLocationInput}
+                    />
+                  </>
+                </>
+              );
+            }
+          )
         : null}
     </div>
   );
