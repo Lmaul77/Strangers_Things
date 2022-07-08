@@ -1,5 +1,9 @@
 import React from "react";
 import { addPost } from "../api";
+import {
+    useNavigate,
+  } from "react-router-dom";
+
 
 const AddUserPosts = ({
   titleInput,
@@ -10,18 +14,25 @@ const AddUserPosts = ({
   setPriceInput,
   checkbox,
   setCheckbox,
+  allPosts,
+  setAllPosts
 }) => {
 
-  function handleSubmit(event) {
+const Navigate = useNavigate()
+
+  async function handleSubmit(event) {
     event.preventDefault();
     const token = localStorage.getItem("token");
-    addPost(
+    const freshPost = await addPost(
       token,
       titleInput,
       descriptionInput,
       priceInput,
       checkbox === "checked"
     );
+    //setAllPosts([...allPosts, freshPost])
+    Navigate("/posts")
+
   }
 
   function handleChange(event) {

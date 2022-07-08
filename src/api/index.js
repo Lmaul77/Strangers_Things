@@ -84,7 +84,7 @@ export async function addPost(token, titleInput, descriptionInput, priceInput, w
     })
   })
   const result = await response.json()
-  console.log(result)
+  console.log(result, "add post fired")
 }
 
 export async function editPost(token, titleInput, descriptionInput, priceInput, willDeliver, postId) {
@@ -108,6 +108,8 @@ export async function editPost(token, titleInput, descriptionInput, priceInput, 
   console.log(result.data._id)
   return result
 }
+
+
 
 // export async function deletePost(token) {
 //   const response = await fetch(`${Base_URL}${cohortName}/posts/${token}`)

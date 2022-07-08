@@ -21,7 +21,8 @@ const App = () => {
   const [priceInput, setPriceInput] = useState("");
   const [authorInput, setAuthorInput] = useState("");
   const [locationInput, setLocationInput] = useState("");
-  const [checkbox, setCheckbox] = useState("unchecked");
+  const [checkbox, setCheckbox] = useState(false);
+  const [allPosts, setAllPosts] = useState([])
 
   return (
     <div>
@@ -44,6 +45,8 @@ const App = () => {
                     setAuthorInput={setAuthorInput}
                     locationInput={locationInput}
                     setLocationInput={setLocationInput}
+                    allPosts={allPosts}
+                    setAllPosts={setAllPosts}
                   />
                 }
               />
@@ -64,6 +67,8 @@ const App = () => {
                     setAuthorInput={setAuthorInput}
                     locationInput={locationInput}
                     setLocationInput={setLocationInput}
+                    allPosts={allPosts}
+                    setAllPosts={setAllPosts}
                   />
                 }
               />

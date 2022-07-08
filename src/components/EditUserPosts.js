@@ -20,14 +20,14 @@ const EditUserPosts = ({
       titleInput,
       descriptionInput,
       priceInput,
-      checkbox === "checked",
+      checkbox,
       postId
     );
   }
 
   function handleChange(event) {
     event.preventDefault();
-    setCheckbox((checkbox === "checked")   ? "unchecked" : "checked");
+    setCheckbox(!checkbox);
   }
 
   return (
@@ -71,7 +71,7 @@ const EditUserPosts = ({
             <div>
               <label htmlFor="willDeliver">
                 <input
-                  id="willDeliver"
+                  id="willDeliver" checked={checkbox}
                   type="checkbox"
                   name="willDeliver"
                   onChange={handleChange}
