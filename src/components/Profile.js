@@ -17,15 +17,8 @@ const Profile = (props) => {
         }
         getMyInfo()
     }, [])
-    // const GetMessages = posts.map((element)=>{
-    //     return(<div key={ element.id } className="posts">
-    //         <h1 id="Title">{ element.title }</h1>
-    //         <p id="Description">{ element.description }</p>
-    //         <div id="Price">Price: { element.price }</div>
-    //         <div id="Location">Location: { element.location }</div>
-    //       </div>
-    //         )
-    // })
+
+
 
     return (
         <div>

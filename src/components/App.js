@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {Route, Routes, Router, Navigate} from 'react-router-dom'
-import {Header, LoginLogout, Posts, Profile, Register, AddUserPosts, Home} from './';
+import {Header, LoginLogout, Posts, Profile, Register, AddUserPosts, Home, Logout} from './';
 
 import './App.css'
 
@@ -9,7 +9,7 @@ const App = () => {
 
     return(
         <div> 
-        <Header />
+        <Header loggedIn={loggedIn}/>
         <>
         <Routes>
             {loggedIn ?
@@ -18,6 +18,7 @@ const App = () => {
             <Route path="/" element={<Home/>}/>
             <Route path="/adduserposts" element={<AddUserPosts />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/logout" element={<Logout setLoggedIn={setLoggedIn}/>} />
             </>
             : 
             <>
