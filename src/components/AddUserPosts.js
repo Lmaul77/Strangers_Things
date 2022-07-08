@@ -8,7 +8,7 @@ const AddUserPosts = () => {
         document.body.appendChild(check)
     }
 
-    addPost(localStorage.getItem("token"))
+    // addPost(localStorage.getItem("token"))
 
     return  (<>
         <div id="RegisterBoxCenter">
@@ -31,7 +31,10 @@ const AddUserPosts = () => {
         <div>
             <input id="Location" placeholder="Location"></input>
         </div>
-        <button onClick={deliverCheck()}></button>
+        <div>
+            <input id="Willing To Deliver" type="checkbox" ></input>
+            Willing to Deliver?
+        </div>
         <button type="Submit">CREATE</button>
         </form>
         </div>
