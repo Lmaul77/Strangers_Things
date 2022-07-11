@@ -42,8 +42,8 @@ const Navigate = useNavigate()
 
   return (
     <>
-      <div id="RegisterBoxCenter">
-        <div id="RegisterBox">
+      <div id="AddFormCenter">
+        <div id="AddForm">
           <div>
             <h1>Add New Post</h1>
           </div>

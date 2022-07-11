@@ -91,6 +91,8 @@ export async function editPost(
   token,
   titleInput,
   descriptionInput,
+  priceInput,
+  willDeliver,
   _id
 ) {
   console.log(_id, "this is my annoying edit id")
@@ -104,16 +106,15 @@ export async function editPost(
       post: {
         title: titleInput,
         description: descriptionInput,
-        price: 100,
-        location: "On Request",
+        price: priceInput,
         willDeliver: willDeliver,
       },
     }),
   });
-  // console.log(_id)
+  console.log(_id)
   const result = await response.json();
-  console.log(result);
-  // return result;
+  // console.log(result);
+  return result;
 }
 
 export async function deletePost(token, _id) {

@@ -1,6 +1,7 @@
 import React from "react";
 import { editPost } from "../api";
 
+
 const EditUserPosts = ({
   titleInput,
   setTitleInput,
@@ -12,6 +13,7 @@ const EditUserPosts = ({
   setCheckbox,
   _id,
 }) => {
+
 
   function handleSubmit(event) {
     event.preventDefault();

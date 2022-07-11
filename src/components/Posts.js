@@ -27,6 +27,7 @@ const Posts = ({
             Willing to Deliver? {element.willDeliver ? "Yes" : "No"}
           </div>
         </div>
+        
       );
     });
   }

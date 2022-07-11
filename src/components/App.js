@@ -23,8 +23,8 @@ const App = () => {
   const [authorInput, setAuthorInput] = useState("");
   const [locationInput, setLocationInput] = useState("");
   const [checkbox, setCheckbox] = useState(false);
-  const [allPosts, setAllPosts] = useState([])
-  const [myInfo, setMyInfo] = useState([])
+  const [allPosts, setAllPosts] = useState([]);
+  const [myInfo, setMyInfo] = useState([]);
 
   return (
     <div>
@@ -54,7 +54,10 @@ const App = () => {
                   />
                 }
               />
-              <Route path="/" element={<Home />} />
+              <Route
+                path="/"
+                element={<Home loggedIn={loggedIn} />}
+              />
               <Route
                 path="/adduserposts"
                 element={
@@ -76,7 +79,7 @@ const App = () => {
                   />
                 }
               />
-              {/* <Route
+              <Route
                 path="/edituserposts"
                 element={
                   <EditUserPosts
@@ -94,9 +97,37 @@ const App = () => {
                     setLocationInput={setLocationInput}
                   />
                 }
-              /> */}
-              <Route path="/profile/*" element={<Profile titleInput={titleInput} descriptionInput={descriptionInput} priceInput={priceInput} locationInput={locationInput} myInfo={myInfo} setMyInfo={setMyInfo} loggedIn={loggedIn} allPosts={allPosts} setAllPosts={setAllPosts} setTitleInput={setTitleInput} setDescriptionInput={setDescriptionInput} setPriceInput={setPriceInput} setLocationInput={setLocationInput}/>} />
-              {/* <Route path="/userposts" element={<UserPosts myInfo={myInfo} setMyInfo={setMyInfo} loggedIn={loggedIn}/>}/> */}
+              />
+              <Route
+                path="/profile/*"
+                element={
+                  <Profile
+                    titleInput={titleInput}
+                    descriptionInput={descriptionInput}
+                    priceInput={priceInput}
+                    locationInput={locationInput}
+                    myInfo={myInfo}
+                    setMyInfo={setMyInfo}
+                    loggedIn={loggedIn}
+                    allPosts={allPosts}
+                    setAllPosts={setAllPosts}
+                    setTitleInput={setTitleInput}
+                    setDescriptionInput={setDescriptionInput}
+                    setPriceInput={setPriceInput}
+                    setLocationInput={setLocationInput}
+                  />
+                }
+              />
+              <Route
+                path="/userposts"
+                element={
+                  <UserPosts
+                    myInfo={myInfo}
+                    setMyInfo={setMyInfo}
+                    loggedIn={loggedIn}
+                  />
+                }
+              />
               <Route
                 path="/logout"
                 element={<Logout setLoggedIn={setLoggedIn} />}

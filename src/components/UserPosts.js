@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
-import { getProfile, deletePost } from "../api";
+import { getProfile, deletePost, editPost } from "../api";
 import { useNavigate, NavLink } from "react-router-dom";
-import EditUserPosts from "./EditUserPosts.js";
 import DeleteUserPost from "./DeleteUserPost";
 
 import "./UserPosts.css";
@@ -57,10 +56,16 @@ const UserPosts = ({
                     <div id="WillDeliver">
                       Willing to Deliver? {willDeliver ? "Yes" : "No"}
                     </div>
+                    <div id="linktoedit">
+            <NavLink to="/edituserposts" className={"editButton"}>
+              (EDIT POST)
+            </NavLink>
+          </div>
                     <DeleteUserPost _id={_id} />
                   </div>
+                 
 
-                  <>
+                  {/* <>
                     <EditUserPosts
                       _id={_id}
                       titleInput={titleInput}
@@ -72,7 +77,7 @@ const UserPosts = ({
                       locationInput={locationInput}
                       setLocationInput={setLocationInput}
                     />
-                  </>
+                  </> */}
                 </>
               );
             }
