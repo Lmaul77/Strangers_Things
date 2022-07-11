@@ -23,7 +23,7 @@ const Profile = ({ loggedIn, myInfo, setMyInfo, allPosts, setAllPosts, setTitleI
         <div id="messagesContainer">
           <div id="messagesToBox">
             <h1>MESSAGES TO</h1>
-            <div className="gridBoxes">
+            <div className="postGridBoxes">
               messagestobox
             </div>
           </div>

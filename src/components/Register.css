@@ -1,4 +1,4 @@
-#RegisterBoxCenter {
+/* #RegisterBoxCenter {
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -19,14 +19,14 @@
       flex-direction: column;
     }
     
-    h1{
+    #RegisterMessage{
         font-size: 1.2em;
         color: #4059AD;
         text-shadow: 1px 1px 3px darkgray; 
         text-align: center;
     }
     
-    #Username {
+    #RUsername {
         align-self: center;
         padding: 15px;
         margin: 5px;
@@ -34,17 +34,17 @@
         border-color: #4059AD;
     }
     
-    #Password {
+    #RPassword {
         align-self: center;
         padding: 15px;
         margin: 5px;
         font-size: 20px;
         border-color: #4059AD;
-    }
+    } */
     
     /* this button css was taken from webdeasy Author: Natalia Reshetnikova; */
     
-    button {
+    /* button {
         color: white;
         transition: all 0.3s;
         position: relative;
@@ -100,4 +100,4 @@
       button:hover::after {
         opacity: 0; 
         transform: scale(0.1, 1);
-      }
+      } */

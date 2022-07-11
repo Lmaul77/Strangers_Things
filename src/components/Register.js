@@ -13,16 +13,16 @@ const Register = () => {
         <div id="RegisterBoxCenter">
         <div id="RegisterBox">
         <div>
-            <h1>
+            <h1 id="RegisterMessage">
                 Create Your New Stranger's Things Account
             </h1>
         </div>
         <form onSubmit ={handleSubmit}>
         <div>
-            <input id="Username" placeholder="Username"></input>
+            <input id="RUsername" placeholder="Username"></input>
         </div>
         <div>
-            <input id="Password" placeholder="Password"></input>
+            <input id="RPassword" placeholder="Password"></input>
         </div>
         <button type="Submit">REGISTER</button>
         </form>

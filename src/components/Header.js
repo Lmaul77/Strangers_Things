@@ -5,7 +5,7 @@ import './Header.css'
 
 const Header = ({loggedIn}) => {
   return (
-    <header>
+    <header id="HomeHeader">
       <h1>
         <NavLink to="/" className={"homeheader"}>Stranger's Things </NavLink></h1>
       <form className="header-buttons">

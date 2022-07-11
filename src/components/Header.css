@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 
-header {
+#HomeHeader {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -28,12 +28,12 @@ header {
     
 }
 
-header .header-buttons {
+#HomeHeader .header-buttons {
     display: flex;
     flex-direction: row;
 }
 
-header .routebuttons {
+#HomeHeader .routebuttons {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -43,4 +43,4 @@ header .routebuttons {
     text-decoration: none;
     color: white;
     text-shadow: 1px 1px 3px black;
-}
+} */

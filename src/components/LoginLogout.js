@@ -33,16 +33,16 @@ const LoginLogut = ({loggedIn, setLoggedIn}) => {
         <div id="LoginBoxCenter">
         <div id="LoginBox">
         <div>
-            <h1>
+            <h1 id="LoginHeader">
                 Log In To Your Stranger's Things Account
             </h1>
         </div>
         <form onSubmit ={handleSubmit}>
         <div>
-            <input id="Username" placeholder="Username"></input>
+            <input id="HUsername" placeholder="Username"></input>
         </div>
         <div>
-            <input id="Password" placeholder="Password"></input>
+            <input id="HPassword" placeholder="Password"></input>
         </div>
         <button type="Submit">LOGIN</button>
         </form>

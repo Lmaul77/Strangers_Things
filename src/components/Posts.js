@@ -33,7 +33,7 @@ const Posts = ({
   return (
     <div>
       <span>
-        <h1>
+        <h1 id="postsTitle">
           <div id="postsheader">POSTS</div>
           <form>
             <input
