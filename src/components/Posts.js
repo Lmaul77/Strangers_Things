@@ -1,65 +1,88 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import {                 GetPosts } from "../api/index.js";
-import NewUserMessage from "./NewUserMessage.js";
+import { GetPosts } from "../api/index.js";
+import SearchandPost from "./SearchandPost.js";
 
 // import './Posts.css'
 
-const Posts = ({
-  allPosts,
-  setAllPosts,
-  username
-}) => {
-  console.log(username)
-  let MapPosts = [];
+const Posts = ({ allPosts, setAllPosts, username, loggedIn }) => {
+  const [filter, setFilter] = useState([]);
+  const [newData, setNewData] = useState([]);
+
+  function searchItems(searchVal) {
+    const data = allPosts.filter((item) => {
+      return item.title.toLowerCase().includes(searchVal.toLowerCase())
+        ? true
+        : false;
+    });
+    data.length > 0 ? setFilter(data) : setFilter([]);
+  }
+
+  useEffect(() => {
+    searchItems(newData);
+  }, [newData]);
+
   useEffect(() => {
     GetPosts().then((results) => {
       setAllPosts(results.data.posts);
     });
   }, []);
-  if (allPosts && allPosts.length) {
-    MapPosts = allPosts.map(({title, description, price, location, author, _id, willDeliver}) => {
-      return (
-        <div key={_id} className="posts">
-          <h1 id="Title">{title}</h1>
-          <p id="Description">{description}</p>
-          <div id="Price">Price: {price}</div>
-          <div id="Author">Author: {author.username}</div>
-          <div id="Location">Location: {location}</div>
-          <div id="WillDeliver">
-            Willing to Deliver? {willDeliver ? "Yes" : "No"}
-          </div>
-          {
-            (author.username !== localStorage.getItem("username")) ?
-              <NewUserMessage _id={_id} />
-               :null
-          }
-        </div>
-      );
-    });
-  }
+  
   return (
-    <div>
-      <span>
-        <h1>
-          <div id="postsheader">POSTS</div>
-          <form>
-            <input
-              type="text"
-              name="search-term"
-              placeholder="Search Posts"
-              id="searchBar"
-            ></input>
-          </form>
-          <div id="linktoadd">
-            <NavLink to="/adduserposts" className={"addButton"}>
-              (ADD POST)
-            </NavLink>
-          </div>
-        </h1>
-      </span>
-      {MapPosts && MapPosts.length ? <div>{MapPosts}</div> : null}
-    </div>
+    <>
+      <div>
+        <span>
+          <h1>
+            <div id="postsheader">POSTS</div>
+            <form>
+              <input
+                type="text"
+                name="search-term"
+                placeholder="Search Posts"
+                id="searchBar"
+                onChange={(event) => {
+                  setNewData(event.target.value);
+                }}
+              ></input>
+            </form>
+            <div id="linktoadd">
+              {loggedIn ? (
+                <NavLink to="/adduserposts" className={"addButton"}>
+                  (ADD POST)
+                </NavLink>
+              ) : null}
+            </div>
+          </h1>
+        </span>
+      </div>
+      <div>
+        {filter.length > 0
+          ? filter.map((element) => {
+              return (
+                <SearchandPost
+                  key={element._id}
+                  element={element}
+                  loggedIn={loggedIn}
+                  username={username}
+                  allPosts={allPosts}
+                  setAllPosts={setAllPosts}
+                />
+              );
+            })
+          : allPosts.map((element) => {
+              return (
+                <SearchandPost
+                  key={element._id}
+                  element={element}
+                  loggedIn={loggedIn}
+                  username={username}
+                  allPosts={allPosts}
+                  setAllPosts={setAllPosts}
+                />
+              );
+            })}
+      </div>
+    </>
   );
 };
 

@@ -26,10 +26,9 @@ const App = () => {
   const [checkbox, setCheckbox] = useState(false);
   const [allPosts, setAllPosts] = useState([]);
   const [myInfo, setMyInfo] = useState([]);
-  const [sendMessage, setSendMessage] = useState("")
-  const [myId, setMyID] = useState("")
-  const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
+  const [sendMessage, setSendMessage] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <div>
@@ -38,25 +37,35 @@ const App = () => {
         <Routes>
           {loggedIn ? (
             <>
-              <Route path="/newusermessage" element={<NewUserMessage sendMessage={sendMessage} setSendMessage={setSendMessage}/>} />
+              <Route
+                path="/newusermessage"
+                element={
+                  <NewUserMessage
+                    sendMessage={sendMessage}
+                    setSendMessage={setSendMessage}
+                  />
+                }
+              />
               <Route
                 path="/posts"
                 element={
                   <Posts
-                    checkbox={checkbox}
-                    setCheckbox={setCheckbox}
-                    titleInput={titleInput}
-                    setTitleInput={setTitleInput}
-                    descriptionInput={descriptionInput}
-                    setDescriptionInput={setDescriptionInput}
-                    priceInput={priceInput}
-                    setPriceInput={setPriceInput}
-                    authorInput={authorInput}
-                    setAuthorInput={setAuthorInput}
-                    locationInput={locationInput}
-                    setLocationInput={setLocationInput}
-                    allPosts={allPosts}
-                    setAllPosts={setAllPosts}
+                  loggedIn={loggedIn}
+                  username={username}
+                  checkbox={checkbox}
+                  setCheckbox={setCheckbox}
+                  titleInput={titleInput}
+                  setTitleInput={setTitleInput}
+                  descriptionInput={descriptionInput}
+                  setDescriptionInput={setDescriptionInput}
+                  priceInput={priceInput}
+                  setPriceInput={setPriceInput}
+                  authorInput={authorInput}
+                  setAuthorInput={setAuthorInput}
+                  locationInput={locationInput}
+                  setLocationInput={setLocationInput}
+                  allPosts={allPosts}
+                  setAllPosts={setAllPosts}
                   />
                 }
               />
@@ -82,26 +91,6 @@ const App = () => {
                   />
                 }
               />
-              {/* <Route
-                path="/edituserposts"
-                element={
-                  <EditUserPosts
-                    // _id={_id}
-                    checkbox={checkbox}
-                    setCheckbox={setCheckbox}
-                    titleInput={titleInput}
-                    setTitleInput={setTitleInput}
-                    descriptionInput={descriptionInput}
-                    setDescriptionInput={setDescriptionInput}
-                    priceInput={priceInput}
-                    setPriceInput={setPriceInput}
-                    authorInput={authorInput}
-                    setAuthorInput={setAuthorInput}
-                    locationInput={locationInput}
-                    setLocationInput={setLocationInput}
-                  />
-                }
-              /> */}
               <Route
                 path="/profile/*"
                 element={
@@ -143,6 +132,7 @@ const App = () => {
                 path="/posts"
                 element={
                   <Posts
+                    loggedIn={loggedIn}
                     username={username}
                     checkbox={checkbox}
                     setCheckbox={setCheckbox}
@@ -165,7 +155,14 @@ const App = () => {
               <Route
                 path="/login"
                 element={
-                  <LoginLogout loggedIn={loggedIn} setLoggedIn={setLoggedIn} username={username} setUsername={setUsername} password={password} setPassword={setPassword}/>
+                  <LoginLogout
+                    loggedIn={loggedIn}
+                    setLoggedIn={setLoggedIn}
+                    username={username}
+                    setUsername={setUsername}
+                    password={password}
+                    setPassword={setPassword}
+                  />
                 }
               />
               <Route path="/" element={<Home />} />
