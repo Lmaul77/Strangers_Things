@@ -29,6 +29,7 @@ const App = () => {
   const [sendMessage, setSendMessage] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [newData, setNewData] = useState([]);
 
   return (
     <div>
@@ -46,26 +47,28 @@ const App = () => {
                   />
                 }
               />
-              <Route
+               <Route
                 path="/posts"
                 element={
                   <Posts
-                  loggedIn={loggedIn}
-                  username={username}
-                  checkbox={checkbox}
-                  setCheckbox={setCheckbox}
-                  titleInput={titleInput}
-                  setTitleInput={setTitleInput}
-                  descriptionInput={descriptionInput}
-                  setDescriptionInput={setDescriptionInput}
-                  priceInput={priceInput}
-                  setPriceInput={setPriceInput}
-                  authorInput={authorInput}
-                  setAuthorInput={setAuthorInput}
-                  locationInput={locationInput}
-                  setLocationInput={setLocationInput}
-                  allPosts={allPosts}
-                  setAllPosts={setAllPosts}
+                    loggedIn={loggedIn}
+                    username={username}
+                    checkbox={checkbox}
+                    setCheckbox={setCheckbox}
+                    titleInput={titleInput}
+                    setTitleInput={setTitleInput}
+                    descriptionInput={descriptionInput}
+                    setDescriptionInput={setDescriptionInput}
+                    priceInput={priceInput}
+                    setPriceInput={setPriceInput}
+                    authorInput={authorInput}
+                    setAuthorInput={setAuthorInput}
+                    locationInput={locationInput}
+                    setLocationInput={setLocationInput}
+                    allPosts={allPosts}
+                    setAllPosts={setAllPosts}
+                    newData={newData}
+                    setNewData={setNewData}
                   />
                 }
               />
@@ -92,7 +95,7 @@ const App = () => {
                 }
               />
               <Route
-                path="/profile/*"
+                path="/profile"
                 element={
                   <Profile
                     titleInput={titleInput}
@@ -148,6 +151,8 @@ const App = () => {
                     setLocationInput={setLocationInput}
                     allPosts={allPosts}
                     setAllPosts={setAllPosts}
+                    newData={newData}
+                    setNewData={setNewData}
                   />
                 }
               />
