@@ -24,6 +24,7 @@ const UserPosts = ({
       const token = localStorage.getItem("token");
       getProfile(token).then((results) => {
         setMyInfo(results.data.posts);
+        console.log(myInfo);
       });
     } else {
       setMyInfo([]);

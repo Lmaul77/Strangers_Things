@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getProfile } from "../api";
 import UserMessages from "./UserMessages";
 import UserPosts from "./UserPosts";
+import MessagesFrom from "./MessagesFrom";
 // import './Profile.css'
 
 const Profile = ({ loggedIn, myInfo, setMyInfo, allPosts, setAllPosts, setTitleInput, setDescriptionInput, setPriceInput, setLocationInput, titleInput, descriptionInput, priceInput, locationInput }) => {
@@ -11,8 +12,8 @@ const Profile = ({ loggedIn, myInfo, setMyInfo, allPosts, setAllPosts, setTitleI
     token = localStorage.getItem("token");
     async function getMyInfo() {
       const myReturnedInfo = await getProfile(token);
-      console.log(myReturnedInfo)
       setProfileInfo(myReturnedInfo);
+      console.log(myReturnedInfo);
     }
     getMyInfo();
   }, []);
@@ -32,7 +33,7 @@ const Profile = ({ loggedIn, myInfo, setMyInfo, allPosts, setAllPosts, setTitleI
           <div id="messagesFromBox">
             <h1>MESSAGES FROM</h1>
             <div className="gridBoxes">
-                messagesfrombox
+                <MessagesFrom profileInfo={profileInfo}/>
             </div>
           </div>
         </div>

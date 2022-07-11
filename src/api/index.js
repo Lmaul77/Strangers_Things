@@ -129,3 +129,21 @@ export async function deletePost(token, _id) {
   const result = await response.json();
   return result;
 }
+
+export async function sendNewMessage (token,  _id,
+  messageContent) {
+  console.log(_id)
+  const response = await fetch(`${Base_URL}${cohortName}/posts/${_id}/messages`, {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify({
+      message: {
+        content: messageContent
+      }
+    })
+    
+  })
+return await response.json()}
