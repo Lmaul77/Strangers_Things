@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { getProfile } from "../api";
+import UserMessages from "./UserMessages";
 import UserPosts from "./UserPosts";
 // import './Profile.css'
 
 const Profile = ({ loggedIn, myInfo, setMyInfo, allPosts, setAllPosts, setTitleInput, setDescriptionInput, setPriceInput, setLocationInput, titleInput, descriptionInput, priceInput, locationInput }) => {
   let token = "";
-  const [myInfos, setMyInfos] = useState({});
+  const [profileInfo, setProfileInfo] = useState({});
   useEffect(() => {
     token = localStorage.getItem("token");
     async function getMyInfo() {
       const myReturnedInfo = await getProfile(token);
-      setMyInfos(myReturnedInfo);
+      console.log(myReturnedInfo)
+      setProfileInfo(myReturnedInfo);
     }
     getMyInfo();
   }, []);
@@ -24,7 +26,7 @@ const Profile = ({ loggedIn, myInfo, setMyInfo, allPosts, setAllPosts, setTitleI
           <div id="messagesToBox">
             <h1>MESSAGES TO</h1>
             <div className="postGridBoxes">
-              messagestobox
+              <UserMessages myInfo={myInfo}/>
             </div>
           </div>
           <div id="messagesFromBox">

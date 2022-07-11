@@ -11,7 +11,8 @@ const Logout = ({setLoggedIn}) =>{
         navigate('/')
     })
     // setLoggedIn(false)
-    // localStorage.removeItem('token');
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
     return(
     <div>
         <h1 id="logoutmessage">You Are Logged Out!</h1>

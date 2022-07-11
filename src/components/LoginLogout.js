@@ -7,25 +7,35 @@ import {
 
 import './LoginLogout.css'
 
-const LoginLogut = ({loggedIn, setLoggedIn}) => {
+const LoginLogut = ({loggedIn, setLoggedIn, username, setUsername, password, setPassword}) => {
     const navigate = useNavigate()
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
 
-    const handleOnChange = (event) => {
-        const input = event.target.id
-        if (input === "username") {
-            setUsername(event.target.value)
-        } else {
-            setPassword(event.target.value)
-        }
-    }
+    // const handleOnChange = (event) => {
+    //     const input = event.target.id
+    //     if (input === "username") {
+    //         setUsername(event.target.value)
+    //     } else {
+    //         setPassword(event.target.value)
+    //     }
+    // }
 
     async function handleSubmit (event){
         event.preventDefault() 
+        const loginUsername = event.target[0].value;
+        console.log(loginUsername)
+        const input = event.target.id
         const token = await LoginPerson(event)
-        token ? setLoggedIn(true) : false
+        if (token)  {setLoggedIn(true)
         localStorage.setItem("token", token)
+        localStorage.setItem("username", loginUsername)
+        setUsername(loginUsername)
+         }
+        
+        // if (input === "username") {
+        //     setUsername(event.target.value)
+        // } else {
+        //     setPassword(event.target.value)
+        // }
         navigate('/profile')
     }
     

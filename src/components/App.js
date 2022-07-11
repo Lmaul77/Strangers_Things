@@ -11,6 +11,7 @@ import {
   Logout,
   EditUserPosts,
   UserPosts,
+  NewUserMessage,
 } from "./";
 
 import "./App.css";
@@ -25,6 +26,10 @@ const App = () => {
   const [checkbox, setCheckbox] = useState(false);
   const [allPosts, setAllPosts] = useState([]);
   const [myInfo, setMyInfo] = useState([]);
+  const [sendMessage, setSendMessage] = useState("")
+  const [myId, setMyID] = useState("")
+  const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
 
   return (
     <div>
@@ -33,6 +38,7 @@ const App = () => {
         <Routes>
           {loggedIn ? (
             <>
+              <Route path="/newusermessage" element={<NewUserMessage sendMessage={sendMessage} setSendMessage={setSendMessage}/>} />
               <Route
                 path="/posts"
                 element={
@@ -54,10 +60,7 @@ const App = () => {
                   />
                 }
               />
-              <Route
-                path="/"
-                element={<Home loggedIn={loggedIn} />}
-              />
+              <Route path="/" element={<Home loggedIn={loggedIn} />} />
               <Route
                 path="/adduserposts"
                 element={
@@ -79,10 +82,11 @@ const App = () => {
                   />
                 }
               />
-              <Route
+              {/* <Route
                 path="/edituserposts"
                 element={
                   <EditUserPosts
+                    // _id={_id}
                     checkbox={checkbox}
                     setCheckbox={setCheckbox}
                     titleInput={titleInput}
@@ -97,7 +101,7 @@ const App = () => {
                     setLocationInput={setLocationInput}
                   />
                 }
-              />
+              /> */}
               <Route
                 path="/profile/*"
                 element={
@@ -139,6 +143,7 @@ const App = () => {
                 path="/posts"
                 element={
                   <Posts
+                    username={username}
                     checkbox={checkbox}
                     setCheckbox={setCheckbox}
                     titleInput={titleInput}
@@ -160,7 +165,7 @@ const App = () => {
               <Route
                 path="/login"
                 element={
-                  <LoginLogout loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+                  <LoginLogout loggedIn={loggedIn} setLoggedIn={setLoggedIn} username={username} setUsername={setUsername} password={password} setPassword={setPassword}/>
                 }
               />
               <Route path="/" element={<Home />} />

@@ -1,26 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 import { editPost } from "../api";
 
 
 const EditUserPosts = ({
-  titleInput,
-  setTitleInput,
-  descriptionInput,
-  setDescriptionInput,
-  priceInput,
-  setPriceInput,
   checkbox,
   setCheckbox,
   _id,
 }) => {
+  const [titleInput, setTitleInput] = useState("");
+  const [descriptionInput, setDescriptionInput] = useState("");
+  const [priceInput, setPriceInput] = useState("");
 
-
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const token = localStorage.getItem("token");
-  editPost(token, titleInput, descriptionInput, _id);
+  const newpost = await editPost(token,
+    titleInput,
+    descriptionInput,
+    priceInput,
+    true,
+    _id);
+    console.log(newpost)
   }
-
+// "come back to later"
   function handleChange(event) {
     event.preventDefault();
     setCheckbox(!checkbox);

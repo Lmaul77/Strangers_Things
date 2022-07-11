@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { editPost, GetPosts } from "../api/index.js";
+import {                 GetPosts } from "../api/index.js";
+import NewUserMessage from "./NewUserMessage.js";
 
 // import './Posts.css'
 
 const Posts = ({
   allPosts,
   setAllPosts,
+  username
 }) => {
+  console.log(username)
   let MapPosts = [];
   useEffect(() => {
     GetPosts().then((results) => {
@@ -15,26 +18,30 @@ const Posts = ({
     });
   }, []);
   if (allPosts && allPosts.length) {
-    MapPosts = allPosts.map((element) => {
+    MapPosts = allPosts.map(({title, description, price, location, author, _id, willDeliver}) => {
       return (
-        <div key={element._id} className="posts">
-          <h1 id="Title">{element.title}</h1>
-          <p id="Description">{element.description}</p>
-          <div id="Price">Price: {element.price}</div>
-          <div id="Author">Author: {element.author.username}</div>
-          <div id="Location">Location: {element.location}</div>
+        <div key={_id} className="posts">
+          <h1 id="Title">{title}</h1>
+          <p id="Description">{description}</p>
+          <div id="Price">Price: {price}</div>
+          <div id="Author">Author: {author.username}</div>
+          <div id="Location">Location: {location}</div>
           <div id="WillDeliver">
-            Willing to Deliver? {element.willDeliver ? "Yes" : "No"}
+            Willing to Deliver? {willDeliver ? "Yes" : "No"}
           </div>
+          {
+            (author.username !== localStorage.getItem("username")) ?
+              <NewUserMessage _id={_id} />
+               :null
+          }
         </div>
-        
       );
     });
   }
   return (
     <div>
       <span>
-        <h1 id="postsTitle">
+        <h1>
           <div id="postsheader">POSTS</div>
           <form>
             <input

@@ -2,13 +2,18 @@ import React from 'react';
 
 import './NewUserMessage.css'
 
-const NewUserMessage = () => {
+const NewUserMessage = ({sendMessage, setSendMessage, _id}) => {
+             function handleSubmit(event) {
+                event.preventDefault()
+                
+             }
+
             return (
             <div>
                 <div id="MessageHeader">
                 <h1>Message User about This Post</h1>
                 </div>
-                <form onSubmit ={"handleSubmit"}>
+                <form onSubmit ={handleSubmit}>
                 <div>
                 <input id="Title" placeholder="Title"></input>
                 </div>

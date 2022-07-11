@@ -4,6 +4,7 @@ import { useNavigate, NavLink } from "react-router-dom";
 import DeleteUserPost from "./DeleteUserPost";
 
 import "./UserPosts.css";
+import EditUserPosts from "./EditUserPosts";
 
 const UserPosts = ({
   titleInput,
@@ -57,9 +58,15 @@ const UserPosts = ({
                       Willing to Deliver? {willDeliver ? "Yes" : "No"}
                     </div>
                     <div id="linktoedit">
-            <NavLink to="/edituserposts" className={"editButton"}>
-              (EDIT POST)
-            </NavLink>
+            <EditUserPosts _id={_id}
+                      titleInput={titleInput}
+                      setTitleInput={setTitleInput}
+                      descriptionInput={descriptionInput}
+                      setDescriptionInput={setDescriptionInput}
+                      priceInput={priceInput}
+                      setPriceInput={setPriceInput}
+                      locationInput={locationInput}
+                      setLocationInput={setLocationInput} />
           </div>
                     <DeleteUserPost _id={_id} />
                   </div>
