@@ -98,6 +98,7 @@ const App = () => {
                 path="/profile"
                 element={
                   <Profile
+                  username={username}
                     titleInput={titleInput}
                     descriptionInput={descriptionInput}
                     priceInput={priceInput}
@@ -170,7 +171,7 @@ const App = () => {
                   />
                 }
               />
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home username={username}/>} />
             </>
           )}
         </Routes>

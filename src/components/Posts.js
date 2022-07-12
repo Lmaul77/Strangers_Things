@@ -5,18 +5,30 @@ import SearchandPost from "./SearchandPost.js";
 
 // import './Posts.css'
 
-const Posts = ({ allPosts, setAllPosts, username, loggedIn, newData, setNewData }) => {
+const Posts = ({
+  allPosts,
+  setAllPosts,
+  username,
+  loggedIn,
+  newData,
+  setNewData,
+}) => {
   const [filter, setFilter] = useState([]);
- 
 
   function searchItems(searchVal) {
     const data = allPosts.filter((item) => {
-      return item.title.toLowerCase().includes(searchVal.toLowerCase()) ||
-      item.description.toLowerCase().includes(searchVal.toLowerCase()) ||
-      item.author.username.toLowerCase().includes(searchVal.toLowerCase()) ||
-      item.price.toLowerCase().includes(searchVal.toLowerCase())
-        ? true
-        : false;
+      if (searchVal.length > 0) {
+        return item.title.toLowerCase().includes(searchVal.toLowerCase()) ||
+          item.description.toLowerCase().includes(searchVal.toLowerCase()) ||
+          item.author.username
+            .toLowerCase()
+            .includes(searchVal.toLowerCase()) ||
+          item.price.toLowerCase().includes(searchVal.toLowerCase())
+          ? true
+          : false;
+      } else {
+        return;
+      }
     });
     data.length > 0 ? setFilter(data) : setFilter([]);
   }
@@ -30,7 +42,7 @@ const Posts = ({ allPosts, setAllPosts, username, loggedIn, newData, setNewData 
       setAllPosts(results.data.posts);
     });
   }, []);
-  
+
   return (
     <>
       <div>

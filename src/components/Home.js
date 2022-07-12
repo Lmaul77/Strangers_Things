@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import "./Home.css";
 
-const Home = ({ loggedIn }) => {
+const Home = ({ loggedIn, username }) => {
   if (!loggedIn) {
     return (
       <div>
@@ -23,7 +23,7 @@ const Home = ({ loggedIn }) => {
   } else {
     return (
       <div>
-        <h1 id="greetmessage">Welcome to Stranger's Things, Username</h1>
+        <h1 id="greetmessage">Welcome to Stranger's Things, {localStorage.getItem("username", username)}</h1>
         <div className="welcomebox">
         <NavLink to="/profile" className={"welcomelink"}>
             VIEW YOUR PROFILE

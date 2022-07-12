@@ -5,7 +5,22 @@ import UserPosts from "./UserPosts";
 import MessagesFrom from "./MessagesFrom";
 // import './Profile.css'
 
-const Profile = ({ loggedIn, myInfo, setMyInfo, allPosts, setAllPosts, setTitleInput, setDescriptionInput, setPriceInput, setLocationInput, titleInput, descriptionInput, priceInput, locationInput }) => {
+const Profile = ({
+  username,
+  loggedIn,
+  myInfo,
+  setMyInfo,
+  allPosts,
+  setAllPosts,
+  setTitleInput,
+  setDescriptionInput,
+  setPriceInput,
+  setLocationInput,
+  titleInput,
+  descriptionInput,
+  priceInput,
+  locationInput,
+}) => {
   let token = "";
   const [profileInfo, setProfileInfo] = useState({});
   useEffect(() => {
@@ -20,20 +35,16 @@ const Profile = ({ loggedIn, myInfo, setMyInfo, allPosts, setAllPosts, setTitleI
 
   return (
     <div>
-      <h1 id="ProfileHeader">WELCOME USERNAME</h1>
+      <h1 id="ProfileHeader">
+        WELCOME {localStorage.getItem("username", username)}
+      </h1>
       {/* this will be changed to logged in user */}
       <div id="gridcontainer">
         <div id="messagesContainer">
-          <div id="messagesToBox">
-            <h1>MESSAGES TO</h1>
-            <div className="postGridBoxes">
-              <UserMessages myInfo={myInfo}/>
-            </div>
-          </div>
           <div id="messagesFromBox">
             <h1>MESSAGES FROM</h1>
             <div className="gridBoxes">
-                <MessagesFrom profileInfo={profileInfo}/>
+              <MessagesFrom profileInfo={profileInfo} />
             </div>
           </div>
         </div>
