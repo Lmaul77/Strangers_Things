@@ -5,7 +5,7 @@ const EditUserPosts = ({ _id, setMyInfo, willDeliver }) => {
   const [titleInput, setTitleInput] = useState("");
   const [descriptionInput, setDescriptionInput] = useState("");
   const [priceInput, setPriceInput] = useState("");
-  const [newCheckbox, setNewCheckbox] = useState(willDeliver)
+  const [newCheckbox, setNewCheckbox] = useState(willDeliver);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -24,10 +24,8 @@ const EditUserPosts = ({ _id, setMyInfo, willDeliver }) => {
 
   function handleChange(event) {
     event.preventDefault();
-    // setCheckbox(!checkbox ? "Yes" : "No");
     setNewCheckbox(!newCheckbox);
   }
-  console.log(newCheckbox, titleInput, descriptionInput, priceInput, _id)
   return (
     <>
       <div id="EditBoxCenter">
