@@ -251,14 +251,6 @@ button:hover::after {
   grid-gap: 20px;
 }
 
-#messagesToBox {
-  box-sizing: border-box;
-  background-color: #eff2f1;
-  box-shadow: 0 2px 4px 0 #6b9ac4;
-  margin-top: 11px;
-  padding: 15px;
-}
-
 #messagesFromBox {
   box-sizing: border-box;
   background-color: #eff2f1;
@@ -272,6 +264,7 @@ button:hover::after {
   background-color: #eff2f1;
   box-shadow: 0 2px 4px 0 #6b9ac4;
   margin-top: 11px;
+  padding: 15px;
 }
 
 .postGridBoxes {
@@ -425,15 +418,19 @@ button:hover::after {
   align-self: center;
 }
 
-#Message {
-  display:flex;
-  flex-direction: column;
-  align-items: flex-start;
+#MFBox {
+  border: 2px solid black;
+  margin: 5px;
+  background-color: #97d8c4;
+  padding: 25px;
+  
 }
 
-#MessageHeader {
+.MFHeader {
   text-decoration: underline;
-  margin-left: 25px;
+  display:flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 #MessageBox {

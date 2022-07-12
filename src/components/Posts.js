@@ -3,8 +3,6 @@ import { NavLink } from "react-router-dom";
 import { GetPosts } from "../api/index.js";
 import SearchandPost from "./SearchandPost.js";
 
-// import './Posts.css'
-
 const Posts = ({
   allPosts,
   setAllPosts,

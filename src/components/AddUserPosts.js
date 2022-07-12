@@ -1,9 +1,6 @@
 import React from "react";
 import { addPost } from "../api";
-import {
-    useNavigate,
-  } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 const AddUserPosts = ({
   titleInput,
@@ -15,10 +12,9 @@ const AddUserPosts = ({
   checkbox,
   setCheckbox,
   allPosts,
-  setAllPosts
+  setAllPosts,
 }) => {
-
-const Navigate = useNavigate()
+  const Navigate = useNavigate();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -30,9 +26,8 @@ const Navigate = useNavigate()
       priceInput,
       checkbox === "checked"
     );
-    setAllPosts([freshPost, ...allPosts])
-    Navigate("/posts")
-
+    setAllPosts([freshPost, ...allPosts]);
+    Navigate("/posts");
   }
 
   function handleChange(event) {
@@ -89,7 +84,9 @@ const Navigate = useNavigate()
                 Willing to Deliver?
               </label>
             </div>
-            <button id="AddButton" type="Submit">CREATE</button>
+            <button id="AddButton" type="Submit">
+              CREATE
+            </button>
           </form>
         </div>
       </div>

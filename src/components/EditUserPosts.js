@@ -1,12 +1,14 @@
 import React, {useState} from "react";
-import { editPost } from "../api";
-
+import { editPost, getProfile } from "../api";
+import { useNavigate } from "react-router-dom";
 
 const EditUserPosts = ({
   checkbox,
   setCheckbox,
   _id,
+  setMyInfo,
 }) => {
+  const Navigate = useNavigate();
   const [titleInput, setTitleInput] = useState("");
   const [descriptionInput, setDescriptionInput] = useState("");
   const [priceInput, setPriceInput] = useState("");
@@ -20,7 +22,9 @@ const EditUserPosts = ({
     priceInput,
     true,
     _id);
-    console.log(newpost)
+    const result = await getProfile(token)
+      setMyInfo(result.data.posts);
+    
   }
 // "come back to later"
   function handleChange(event) {

@@ -1,17 +1,14 @@
 import React, { useState } from "react";
 import { sendNewMessage } from "../api";
 
-import "./NewUserMessage.css";
-
-const NewUserMessage = ({ sendMessage, setSendMessage, _id }) => {
+const NewUserMessage = ({ _id }) => {
   const [messageContent, setMessageContent] = useState("");
   async function handleSubmit(event) {
     event.preventDefault();
     const token = localStorage.getItem("token");
     const message = await sendNewMessage(token, _id, messageContent);
-    return message
+    return message;
   }
-
 
   return (
     <div id="Message">
@@ -28,7 +25,9 @@ const NewUserMessage = ({ sendMessage, setSendMessage, _id }) => {
             }}
           ></input>
         </div>
-        <button id="sendButton" type="Submit">SEND MESSAGE</button>
+        <button id="sendButton" type="Submit">
+          SEND MESSAGE
+        </button>
       </form>
     </div>
   );

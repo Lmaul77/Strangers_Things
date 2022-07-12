@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
-import { App, Header, LoginLogout, NewUserMessage, UserPosts, Posts, Profile, UserMessages, Search, AddUserPosts, Home, EditUserPosts, DeleteUserPost, Register } from "./components";
+import { App } from "./components";
 
 const root = ReactDOM.createRoot(document.getElementById("app"));
 root.render(
   <BrowserRouter>
-        <App />
+    <App />
   </BrowserRouter>
 );

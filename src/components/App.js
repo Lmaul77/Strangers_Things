@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Route, Routes, Router, Navigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import {
   Header,
   LoginLogout,
@@ -9,12 +9,9 @@ import {
   AddUserPosts,
   Home,
   Logout,
-  EditUserPosts,
   UserPosts,
   NewUserMessage,
 } from "./";
-
-import "./App.css";
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);

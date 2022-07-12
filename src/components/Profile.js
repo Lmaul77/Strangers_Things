@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getProfile } from "../api";
-import UserMessages from "./UserMessages";
 import UserPosts from "./UserPosts";
 import MessagesFrom from "./MessagesFrom";
-// import './Profile.css'
 
 const Profile = ({
   username,
@@ -28,7 +26,6 @@ const Profile = ({
     async function getMyInfo() {
       const myReturnedInfo = await getProfile(token);
       setProfileInfo(myReturnedInfo);
-      console.log(myReturnedInfo);
     }
     getMyInfo();
   }, []);
@@ -38,7 +35,6 @@ const Profile = ({
       <h1 id="ProfileHeader">
         WELCOME {localStorage.getItem("username", username)}
       </h1>
-      {/* this will be changed to logged in user */}
       <div id="gridcontainer">
         <div id="messagesContainer">
           <div id="messagesFromBox">
@@ -50,7 +46,6 @@ const Profile = ({
         </div>
         <div id="userPostsBox">
           <h1>USER POSTS</h1>
-          {/* this will be changed to logged in user */}
           <div className="gridBoxes">
             <UserPosts
               titleInput={titleInput}

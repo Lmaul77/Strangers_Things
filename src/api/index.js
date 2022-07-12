@@ -54,7 +54,7 @@ export async function getProfile(token) {
   const response = await fetch(`${Base_URL}${cohortName}/users/me`, {
     headers: {
       "Content-Type": "application/json",
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   });
   const result = await response.json();
@@ -72,7 +72,7 @@ export async function addPost(
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
       post: {
@@ -95,12 +95,11 @@ export async function editPost(
   willDeliver,
   _id
 ) {
-  console.log(_id, "this is my annoying edit id")
   const response = await fetch(`${Base_URL}${cohortName}/posts/${_id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
       post: {
@@ -111,39 +110,39 @@ export async function editPost(
       },
     }),
   });
-  console.log(_id)
+
   const result = await response.json();
-  // console.log(result);
+
   return result;
 }
 
 export async function deletePost(token, _id) {
-  console.log(_id, "this is my delete postid")
   const response = await fetch(`${Base_URL}${cohortName}/posts/${_id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   });
   const result = await response.json();
   return result;
 }
 
-export async function sendNewMessage (token,  _id,
-  messageContent) {
-  console.log(_id)
-  const response = await fetch(`${Base_URL}${cohortName}/posts/${_id}/messages`, {
-    method: "POST",
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    },
-    body: JSON.stringify({
-      message: {
-        content: messageContent
-      }
-    })
-    
-  })
-return await response.json()}
+export async function sendNewMessage(token, _id, messageContent) {
+  const response = await fetch(
+    `${Base_URL}${cohortName}/posts/${_id}/messages`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        message: {
+          content: messageContent,
+        },
+      }),
+    }
+  );
+  return await response.json();
+}
