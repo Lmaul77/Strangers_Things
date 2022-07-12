@@ -14,7 +14,7 @@ const NewUserMessage = ({ sendMessage, setSendMessage, _id }) => {
 
 
   return (
-    <div>
+    <div id="Message">
       <div id="MessageHeader">
         <h1>Message User about This Post</h1>
       </div>
@@ -28,7 +28,7 @@ const NewUserMessage = ({ sendMessage, setSendMessage, _id }) => {
             }}
           ></input>
         </div>
-        <button type="Submit">SEND MESSAGE</button>
+        <button id="sendButton" type="Submit">SEND MESSAGE</button>
       </form>
     </div>
   );

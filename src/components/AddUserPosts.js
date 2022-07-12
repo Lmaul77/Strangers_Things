@@ -50,7 +50,7 @@ const Navigate = useNavigate()
           <form onSubmit={handleSubmit}>
             <div>
               <input
-                id="Title"
+                id="AddTitle"
                 placeholder="Title"
                 value={titleInput}
                 onChange={(event) => {
@@ -60,7 +60,7 @@ const Navigate = useNavigate()
             </div>
             <div>
               <input
-                id="Description"
+                id="AddDescription"
                 placeholder="Description"
                 value={descriptionInput}
                 onChange={(event) => {
@@ -70,7 +70,7 @@ const Navigate = useNavigate()
             </div>
             <div>
               <input
-                id="Price"
+                id="AddPrice"
                 placeholder="Price"
                 value={priceInput}
                 onChange={(event) => {
@@ -81,7 +81,7 @@ const Navigate = useNavigate()
             <div>
               <label htmlFor="willDeliver">
                 <input
-                  id="willDeliver"
+                  id="AddwillDeliver"
                   type="checkbox"
                   name="willDeliver"
                   onChange={handleChange}
@@ -89,7 +89,7 @@ const Navigate = useNavigate()
                 Willing to Deliver?
               </label>
             </div>
-            <button type="Submit">CREATE</button>
+            <button id="AddButton" type="Submit">CREATE</button>
           </form>
         </div>
       </div>

@@ -17,7 +17,7 @@ const DeleteUserPost = ({_id, setAllPosts, allPosts}) => {
       Navigate("/profile");
     }
     return <form onSubmit={handleDelete}>
-        <button type="Submit">DELETE</button>
+        <button id="deleteButton" type="Submit">DELETE</button>
     </form>
 }
 

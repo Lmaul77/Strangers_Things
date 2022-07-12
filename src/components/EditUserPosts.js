@@ -30,15 +30,15 @@ const EditUserPosts = ({
 
   return (
     <>
-      <div id="RegisterBoxCenter">
-        <div id="RegisterBox">
+      <div id="EditBoxCenter">
+        <div id="EditBox">
           <div>
-            <h1>Edit New Post</h1>
+            <h1>Edit Post</h1>
           </div>
           <form onSubmit={handleSubmit}>
             <div>
               <input
-                id="Title"
+                id="ETitle"
                 placeholder="Title"
                 value={titleInput}
                 onChange={(event) => {
@@ -48,7 +48,7 @@ const EditUserPosts = ({
             </div>
             <div>
               <input
-                id="Description"
+                id="EDescription"
                 placeholder="Description"
                 value={descriptionInput}
                 onChange={(event) => {
@@ -58,7 +58,7 @@ const EditUserPosts = ({
             </div>
             <div>
               <input
-                id="Price"
+                id="EPrice"
                 placeholder="Price"
                 value={priceInput}
                 onChange={(event) => {
@@ -69,7 +69,7 @@ const EditUserPosts = ({
             <div>
               <label htmlFor="willDeliver">
                 <input
-                  id="willDeliver"
+                  id="EwillDeliver"
                   checked={checkbox}
                   type="checkbox"
                   name="willDeliver"
@@ -78,7 +78,7 @@ const EditUserPosts = ({
                 Willing to Deliver?
               </label>
             </div>
-            <button type="Submit">SAVE</button>
+            <button id="Ebutton" type="Submit">SAVE</button>
           </form>
         </div>
       </div>

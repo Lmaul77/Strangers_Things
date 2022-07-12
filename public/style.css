@@ -1,77 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
 
 #HomeHeader {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
-    font-size: 16px;
-    background-color: #4059AD;
-    padding: 1em;
-    text-decoration: none;
-    
+  font-size: 16px;
+  background-color: #4059ad;
+  padding: 1em;
+  text-decoration: none;
 }
-h1{
+h1 {
   font-size: 1.2em;
-  color: #4059AD;
-  text-shadow: 1px 1px 3px darkgray; 
+  color: #4059ad;
+  text-shadow: 1px 1px 3px darkgray;
   text-align: center;
 }
 
 .homeTitle {
-    text-decoration: none;
-    color: white;
-    text-shadow: 1px 1px 3px black;
+  text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px 3px black;
 }
 
 .homeheader {
-    font-size: 2.4em;
-    color: #97D8C4;
-    text-shadow: 1px 1px 3px black;
-    margin-left: 30px;
-    text-decoration: none;
-    
+  font-size: 2.4em;
+  color: #97d8c4;
+  text-shadow: 1px 1px 3px black;
+  margin-left: 30px;
+  text-decoration: none;
 }
 
 #HomeHeader .header-buttons {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 #HomeHeader .routebuttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 1em;
-    font-size: 32px;
-    text-decoration: none;
-    color: white;
-    text-shadow: 1px 1px 3px black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1em;
+  font-size: 32px;
+  text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px 3px black;
 }
 
 #welcomemessage {
-    font-size: 60px;
-
+  font-size: 60px;
 }
 
-.welcomebox{
+.welcomebox {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.welcomelink{
+.welcomelink {
   text-decoration: none;
   font-size: 30px;
-  color:#4059AD;
+  color: #4059ad;
   margin: 10px;
 }
 
 #greetmessage {
   font-size: 60px;
-
 }
 
 #LoginBoxCenter {
@@ -80,237 +76,374 @@ h1{
   right: 0;
   display: flex;
   justify-content: center;
-  }
-  
-  #LoginBox {
-    box-sizing: border-box;
-    background-color: #EFF2F1;
-    box-shadow: 0 2px 4px 0 #6B9AC4;
-    width: 360px;
-    min-height: 400px;
-    padding: 35px 10px;
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  #LoginHeader{
-      font-size: 1.2em;
-      color: #4059AD;
-      text-shadow: 1px 1px 3px darkgray; 
-      text-align: center;
-  }
-  
-  #HUsername {
-      align-self: center;
-      padding: 15px;
-      margin: 5px;
-      font-size: 20px;
-      border-color: #4059AD;
-  }
-  
-  #HPassword {
-      align-self: center;
-      padding: 15px;
-      margin: 5px;
-      font-size: 20px;
-      border-color: #4059AD;
-  }
-    
-    /* this button css was taken from webdeasy Author: Natalia Reshetnikova; */
-    
-    button {
-        color: white;
-        transition: all 0.3s;
-        position: relative;
-        height: 40px;
-        width: 200px;
-        text-align: center;
-        margin-top: 50px;
-        background-color: #4059AD;
-        border: none;
-        left: 18px;
-      }
-      button span {
-        transition: all 0.3s;
-      }
-      button::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        opacity: 0;
-        transition: all 0.3s;
-        border-top-width: 1px;
-        border-bottom-width: 1px;
-        border-top-style: solid;
-        border-bottom-style: solid;
-        border-top-color: rgba(255,255,255,0.5);
-        border-bottom-color: rgba(255,255,255,0.5);
-        transform: scale(0.1, 1);
-      }
-      button:hover span {
-        letter-spacing: 2px;
-      }
-      button:hover::before {
-        opacity: 1; 
-        transform: scale(1, 1); 
-      }
-      button::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        transition: all 0.3s;
-        background-color: rgba(255,255,255,0.1);
-      }
-      button:hover::after {
-        opacity: 0; 
-        transform: scale(0.1, 1);
-      }
+}
 
-      #postsTitle {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    #searchBar {
-        margin: 20px;
-        border: none;
-        border-bottom: 1px solid black;
-    }
-    
-    #postsheader {
-        font-size: 60px;
-    }
-    
-    .addButton {
-        text-decoration: none;
-        font-size: 20px;
-        color: #4059AD;
-    }
-    
-    .posts {
-        display: block;
-        border: 2px solid black;
-        margin: 5px;
-        background-color: #97D8C4;
-    }
-    
-    #Title {
-            font-size: 30px;
-            border-bottom: 1px solid black;
-            text-align: left;
-    }
-    
-    #Description {
-            font-size: 18px;
-    }
-    
+#LoginBox {
+  box-sizing: border-box;
+  background-color: #eff2f1;
+  box-shadow: 0 2px 4px 0 #6b9ac4;
+  width: 360px;
+  min-height: 400px;
+  padding: 35px 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
-    #ProfileHeader {
-      font-size: 48px
-  }
+#LoginHeader {
+  font-size: 1.2em;
+  color: #4059ad;
+  text-shadow: 1px 1px 3px darkgray;
+  text-align: center;
+}
+
+#HUsername {
+  align-self: center;
+  padding: 15px;
+  margin: 5px;
+  font-size: 20px;
+  border-color: #4059ad;
+}
+
+#HPassword {
+  align-self: center;
+  padding: 15px;
+  margin: 5px;
+  font-size: 20px;
+  border-color: #4059ad;
+}
+
+/* this button css was taken from webdeasy Author: Natalia Reshetnikova; */
+
+button {
+  color: white;
+  transition: all 0.3s;
+  position: relative;
+  height: 40px;
+  width: 200px;
+  text-align: center;
+  margin-top: 50px;
+  background-color: #4059ad;
+  border: none;
+  left: 18px;
+}
+button span {
+  transition: all 0.3s;
+}
+button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0.1, 1);
+}
+button:hover span {
+  letter-spacing: 2px;
+}
+button:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+button:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
+}
+
+#postsTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#searchBar {
+  margin: 20px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+#postsheader {
+  font-size: 60px;
+}
+
+.addButton {
+  text-decoration: none;
+  font-size: 20px;
+  color: #4059ad;
+}
+
+.posts {
+  display: block;
+  border: 2px solid black;
+  margin: 5px;
+  background-color: #97d8c4;
+}
+
+#Title {
+  font-size: 30px;
+  border-bottom: 1px solid black;
+  text-shadow: 1px 1px 3px darkgray;
+  text-align: left;
+  font-weight: 800;
+  padding-left: 20px;
+}
+
+#Description {
+  font-size: 18px;
+  font-weight: 800;
+  padding-left: 20px;
+}
+
+#Price {
+  font-weight: 400;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+#Author {
+  font-weight: 400;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+#Location {
+  font-weight: 400;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+#WillDeliver {
+  font-weight: 400;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+#ProfileHeader {
+  font-size: 48px;
+}
+
+#gridcontainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+#messagesToBox {
+  box-sizing: border-box;
+  background-color: #eff2f1;
+  box-shadow: 0 2px 4px 0 #6b9ac4;
+  margin-top: 11px;
+  padding: 15px;
+}
+
+#messagesFromBox {
+  box-sizing: border-box;
+  background-color: #eff2f1;
+  box-shadow: 0 2px 4px 0 #6b9ac4;
+  margin-top: 11px;
+  padding: 15px;
+}
+
+#userPostsBox {
+  box-sizing: border-box;
+  background-color: #eff2f1;
+  box-shadow: 0 2px 4px 0 #6b9ac4;
+  margin-top: 11px;
+}
+
+.postGridBoxes {
+  padding: 15px;
+  overflow: scroll;
+}
+#RegisterBoxCenter {
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#RegisterBox {
+  box-sizing: border-box;
+  background-color: #eff2f1;
+  box-shadow: 0 2px 4px 0 #6b9ac4;
+  width: 360px;
+  min-height: 400px;
+  padding: 35px 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#RegisterMessage {
+  font-size: 1.2em;
+  color: #4059ad;
+  text-shadow: 1px 1px 3px darkgray;
+  text-align: center;
+}
+
+#RUsername {
+  align-self: center;
+  padding: 15px;
+  margin: 5px;
+  font-size: 20px;
+  border-color: #4059ad;
+}
+
+#RPassword {
+  align-self: center;
+  padding: 15px;
+  margin: 5px;
+  font-size: 20px;
+  border-color: #4059ad;
+}
+#AddFormCenter {
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#AddForm {
+  box-sizing: border-box;
+  background-color: #eff2f1;
+  box-shadow: 0 2px 4px 0 #6b9ac4;
+  width: 360px;
+  min-height: 400px;
+  padding: 35px 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#AddTitle {
+  font-weight: 400;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+#AddDescription {
+  font-weight: 400;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+#AddPrice {
+  font-weight: 400;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+#AddAuthor {
+  font-weight: 400;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+#AddwillDeliver {
+  font-weight: 400;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+#EditBoxCenter {
+  padding: 20px;
+  display: flex;
+}
+
+#EditBox {
+  box-sizing: border-box;
+  background-color: #eff2f1;
+  box-shadow: 0 2px 4px 0 #6b9ac4;
+  /* width: 350px; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#ETitle {
+  font-weight: 400;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+#EDescription {
+  font-weight: 400;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+#EPrice {
+  font-weight: 400;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+#EAuthor {
+  font-weight: 400;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+#EwillDeliver {
+  font-weight: 400;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+#Ebutton {
+  margin-bottom: 30px;
+  margin-right: 35px;
+}
+
+#deleteButton {
+  align-self: center;
+}
+
+#Message {
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#MessageHeader {
+  text-decoration: underline;
+  margin-left: 25px;
+}
+
+#MessageBox {
+  margin-left: 25px;
+  padding: 30px 150px;
+  margin-top: 25px;
   
-  #gridcontainer {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 20px;
-  }
-  
-  #messagesToBox {
-      box-sizing: border-box;
-      background-color: #EFF2F1;
-      box-shadow: 0 2px 4px 0 #6B9AC4;
-     
-  }
-  
-  #messagesFromBox {
-      box-sizing: border-box;
-      background-color: #EFF2F1;
-      box-shadow: 0 2px 4px 0 #6B9AC4;
-  }
-  
-  #userPostsBox {
-      box-sizing: border-box;
-      background-color: #EFF2F1;
-      box-shadow: 0 2px 4px 0 #6B9AC4;
-      margin-top: 11px;
-  }
-  
-  .postGridBoxes {
-      padding: 15px;
-      overflow: scroll;
-  }
-  #RegisterBoxCenter {
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    }
-    
-    #RegisterBox {
-      box-sizing: border-box;
-      background-color: #EFF2F1;
-      box-shadow: 0 2px 4px 0 #6B9AC4;
-      width: 360px;
-      min-height: 400px;
-      padding: 35px 10px;
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
-    
-    #RegisterMessage{
-        font-size: 1.2em;
-        color: #4059AD;
-        text-shadow: 1px 1px 3px darkgray; 
-        text-align: center;
-    }
-    
-    #RUsername {
-        align-self: center;
-        padding: 15px;
-        margin: 5px;
-        font-size: 20px;
-        border-color: #4059AD;
-    }
-    
-    #RPassword {
-        align-self: center;
-        padding: 15px;
-        margin: 5px;
-        font-size: 20px;
-        border-color: #4059AD;
-    }
-    #AddFormCenter {
-      margin: 0 auto;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      }
-      
-      #AddForm {
-        box-sizing: border-box;
-        background-color: #EFF2F1;
-        box-shadow: 0 2px 4px 0 #6B9AC4;
-        width: 360px;
-        min-height: 400px;
-        padding: 35px 10px;
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-      }
+}
+
+#sendButton {
+  margin-bottom: 40px;
+  margin-left: 5px;
+}

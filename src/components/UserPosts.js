@@ -59,6 +59,8 @@ const UserPosts = ({
                       Willing to Deliver? {willDeliver ? "Yes" : "No"}
                     </div>
                     <div id="linktoedit">
+                    <DeleteUserPost _id={_id} />
+                  </div>
             <EditUserPosts _id={_id}
                       titleInput={titleInput}
                       setTitleInput={setTitleInput}
@@ -69,8 +71,7 @@ const UserPosts = ({
                       locationInput={locationInput}
                       setLocationInput={setLocationInput} />
           </div>
-                    <DeleteUserPost _id={_id} />
-                  </div>
+                    
                  
 
                   {/* <>
