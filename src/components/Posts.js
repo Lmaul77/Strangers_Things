@@ -10,6 +10,7 @@ const Posts = ({
   loggedIn,
   newData,
   setNewData,
+  checkbox
 }) => {
   const [filter, setFilter] = useState([]);
 
@@ -79,6 +80,7 @@ const Posts = ({
                   username={username}
                   allPosts={allPosts}
                   setAllPosts={setAllPosts}
+                  checkbox={checkbox}
                 />
               );
             })
@@ -91,6 +93,7 @@ const Posts = ({
                   username={username}
                   allPosts={allPosts}
                   setAllPosts={setAllPosts}
+                  checkbox={checkbox}
                 />
               );
             })}

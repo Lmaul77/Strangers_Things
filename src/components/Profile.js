@@ -18,6 +18,8 @@ const Profile = ({
   descriptionInput,
   priceInput,
   locationInput,
+  setCheckBox,
+  checkbox
 }) => {
   let token = "";
   const [profileInfo, setProfileInfo] = useState({});
@@ -61,6 +63,8 @@ const Profile = ({
               setDescriptionInput={setDescriptionInput}
               setPriceInput={setPriceInput}
               setLocationInput={setLocationInput}
+              setCheckbox={setCheckBox}
+              checkbox={checkbox}
             />
           </div>
         </div>

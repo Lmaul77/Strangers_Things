@@ -32,7 +32,7 @@ const AddUserPosts = ({
 
   function handleChange(event) {
     event.preventDefault();
-    setCheckbox(checkbox === "checked" ? "unchecked" : "checked");
+    setCheckbox(!checkbox ? "Yes" : "No");
   }
 
   return (
@@ -77,6 +77,7 @@ const AddUserPosts = ({
               <label htmlFor="willDeliver">
                 <input
                   id="AddwillDeliver"
+                  checked={checkbox}
                   type="checkbox"
                   name="willDeliver"
                   onChange={handleChange}

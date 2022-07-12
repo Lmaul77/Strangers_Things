@@ -1,37 +1,33 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { editPost, getProfile } from "../api";
-import { useNavigate } from "react-router-dom";
 
-const EditUserPosts = ({
-  checkbox,
-  setCheckbox,
-  _id,
-  setMyInfo,
-}) => {
-  const Navigate = useNavigate();
+const EditUserPosts = ({ _id, setMyInfo, willDeliver }) => {
   const [titleInput, setTitleInput] = useState("");
   const [descriptionInput, setDescriptionInput] = useState("");
   const [priceInput, setPriceInput] = useState("");
+  const [newCheckbox, setNewCheckbox] = useState(willDeliver)
 
   async function handleSubmit(event) {
     event.preventDefault();
     const token = localStorage.getItem("token");
-  const newpost = await editPost(token,
-    titleInput,
-    descriptionInput,
-    priceInput,
-    true,
-    _id);
-    const result = await getProfile(token)
-      setMyInfo(result.data.posts);
-    
-  }
-// "come back to later"
-  function handleChange(event) {
-    event.preventDefault();
-    setCheckbox(!checkbox);
+    await editPost(
+      token,
+      titleInput,
+      descriptionInput,
+      priceInput,
+      newCheckbox,
+      _id
+    );
+    const result = await getProfile(token);
+    setMyInfo(result.data.posts);
   }
 
+  function handleChange(event) {
+    event.preventDefault();
+    // setCheckbox(!checkbox ? "Yes" : "No");
+    setNewCheckbox(!newCheckbox);
+  }
+  console.log(newCheckbox, titleInput, descriptionInput, priceInput, _id)
   return (
     <>
       <div id="EditBoxCenter">
@@ -73,8 +69,8 @@ const EditUserPosts = ({
             <div>
               <label htmlFor="willDeliver">
                 <input
-                  id="EwillDeliver"
-                  checked={checkbox}
+                  id="willDeliver"
+                  value={newCheckbox}
                   type="checkbox"
                   name="willDeliver"
                   onChange={handleChange}
@@ -82,7 +78,9 @@ const EditUserPosts = ({
                 Willing to Deliver?
               </label>
             </div>
-            <button id="Ebutton" type="Submit">SAVE</button>
+            <button id="Ebutton" type="Submit">
+              SAVE
+            </button>
           </form>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import NewUserMessage from "./NewUserMessage";
 
-const SearchandPost = ({ element, loggedIn }) => {
+const SearchandPost = ({ element, loggedIn, checkbox }) => {
   return (
     <div key={element._id} className="posts">
       <h1 id="Title">{element.title}</h1>
@@ -10,7 +10,7 @@ const SearchandPost = ({ element, loggedIn }) => {
       <div id="Author">Author: {element.author.username}</div>
       <div id="Location">Location: {element.location}</div>
       <div id="WillDeliver">
-        Willing to Deliver? {element.willDeliver ? "Yes" : "No"}
+        Willing to Deliver? {checkbox ? "Yes" : "No"}
       </div>
       {loggedIn ? (
         <div>

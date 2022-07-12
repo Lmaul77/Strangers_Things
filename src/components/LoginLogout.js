@@ -32,7 +32,7 @@ const LoginLogut = ({ setLoggedIn, setUsername }) => {
               <input id="HUsername" placeholder="Username"></input>
             </div>
             <div>
-              <input id="HPassword" placeholder="Password"></input>
+              <input id="HPassword" placeholder="Password" type="password"></input>
             </div>
             <button type="Submit">LOGIN</button>
           </form>

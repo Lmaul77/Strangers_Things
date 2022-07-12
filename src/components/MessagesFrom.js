@@ -4,9 +4,9 @@ const messagesFrom = ({ profileInfo }) => {
   return (
     <div>
       {profileInfo.data
-        ? profileInfo.data.messages.map((content) => {
+        ? profileInfo.data.messages.map((content, idx) => {
             return (
-              <div id="MFBox">
+              <div key ={`messagesFrom ${idx}`} id="MFBox">
                 <span>
                   <h3 className="MFHeader">User:</h3>
                   {content.fromUser.username}

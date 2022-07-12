@@ -15,6 +15,8 @@ const UserPosts = ({
   myInfo,
   setMyInfo,
   loggedIn,
+  setCheckbox,
+  checkbox,
 }) => {
   useEffect(() => {
     if (loggedIn) {
@@ -30,53 +32,42 @@ const UserPosts = ({
   return (
     <div>
       {myInfo && myInfo.length
-        ? myInfo.map(
-            ({
-              title,
-              description,
-              price,
-              location,
-              _id,
+        ? myInfo.map(({ title, description, price, location, _id, willDeliver, active }) => {
+            if (active) {
+              return (
+                
+                  <div key={_id} className="posts">
+                    <h1 id="Title">{title}</h1>
+                    <p id="Description">{description}</p>
+                    <div id="Price">Price: {price}</div>
 
-              willDeliver,
-              active,
-            }) => {
-              if (active) {
-                return (
-                  <>
-                    <div key={_id} className="posts">
-                      <div>
-                        <h2> </h2>{" "}
-                      </div>
-                      <h1 id="Title">{title}</h1>
-                      <p id="Description">{description}</p>
-                      <div id="Price">Price: {price}</div>
-
-                      <div id="Location">Location: {location}</div>
-                      <div id="WillDeliver">
-                        Willing to Deliver? {willDeliver ? "Yes" : "No"}
-                      </div>
-                      <div id="linktoedit">
-                        <DeleteUserPost _id={_id} setMyInfo={setMyInfo} />
-                      </div>
-                      <EditUserPosts
-                        _id={_id}
-                        titleInput={titleInput}
-                        setTitleInput={setTitleInput}
-                        descriptionInput={descriptionInput}
-                        setDescriptionInput={setDescriptionInput}
-                        priceInput={priceInput}
-                        setPriceInput={setPriceInput}
-                        locationInput={locationInput}
-                        setLocationInput={setLocationInput}
-                        setMyInfo={setMyInfo}
-                      />
+                    <div id="Location">Location: {location}</div>
+                    <div id="WillDeliver">
+                      Willing to Deliver? {willDeliver ? "Yes" : "No"}
                     </div>
-                  </>
-                );
-              }
+                    <div id="linktoedit">
+                      <DeleteUserPost _id={_id} setMyInfo={setMyInfo} />
+                    </div>
+                    <EditUserPosts
+                      _id={_id}
+                      titleInput={titleInput}
+                      setTitleInput={setTitleInput}
+                      descriptionInput={descriptionInput}
+                      setDescriptionInput={setDescriptionInput}
+                      priceInput={priceInput}
+                      setPriceInput={setPriceInput}
+                      locationInput={locationInput}
+                      setLocationInput={setLocationInput}
+                      setMyInfo={setMyInfo}
+                      setCheckbox={setCheckbox}
+                      checkbox={checkbox}
+                      willDeliver={willDeliver}
+                    />
+                  </div>
+                
+              );
             }
-          )
+          })
         : null}
     </div>
   );

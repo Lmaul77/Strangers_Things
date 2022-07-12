@@ -109,6 +109,8 @@ const App = () => {
                     setDescriptionInput={setDescriptionInput}
                     setPriceInput={setPriceInput}
                     setLocationInput={setLocationInput}
+                    setCheckBox={setCheckbox}
+                    checkbox={checkbox}
                   />
                 }
               />
